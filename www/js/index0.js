@@ -2,19 +2,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
 	
-	document.ontouchmove = function(e){
-		e.preventDefault();
-	}
-	
-	
-	//$('#classifica').listview('refresh');
-    
-    document.addEventListener("touchmove",function(e) {
-        e.preventDefault();
-    },
-    false
-    );
-
 	
 	 data();
 	
@@ -240,3 +227,33 @@ $(document).on("touchstart", "#goinsta", function(e){
                
                var ref = window.open('http://www.cdsevents.it', '_system', 'location=no');
                });
+
+
+$(document).on("touchstart", "#pippo", function(e){
+               
+    document.ontouchmove = function(e){
+        e.preventDefault();
+    }
+               
+});
+
+
+$(document).on("touchend", "#pippo", function(e){
+    
+    
+    document.ontouchmove = function(e){
+        return state;
+    }
+               
+});
+
+
+$(document).on("touchstart", "#wrapper", function(e){
+               
+               
+    document.ontouchmove = function(e){
+        return state;
+    }
+});
+
+
