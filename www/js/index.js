@@ -4645,7 +4645,7 @@ var app = {
 			localStorage.setItem("email", "");
 			localStorage.setItem("emailpass", "");
 					   
-			window.location.href = "index2.html";
+			window.location.href = "xpull/index.html";
 					   
 		});
 		
