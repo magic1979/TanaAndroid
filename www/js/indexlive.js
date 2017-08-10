@@ -1,6 +1,8 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
+	
+	alert("Welcome")
     
 	
     var myScroll;
@@ -28,7 +30,7 @@ function onDeviceReady() {
         myScroll.refresh();
         data();
                 
-     }, 500);
+     }, 200);
 	 
 	 
 	function data(){
