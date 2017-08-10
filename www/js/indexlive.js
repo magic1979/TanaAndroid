@@ -1,126 +1,127 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
-	
-	alert("Welcome")
-     
-	 var myScroll;
-		   
-		   myScroll = new iScroll('wrapper', {
-								click: true,
-								useTransform: false,
-								//bounce: false,
-								onBeforeScrollStart: function (e)
-								{
-								var target = e.target;
-								while (target.nodeType != 1) {
-								target = target.parentNode;
-								}
-								
-								if (target.tagName != 'SELECT' && target.tagName != 'INPUT' && target.tagName != 'TEXTAREA' && target.tagName != 'OPTION') {
-								e.preventDefault();
-								}
-								}
+    
+    
+    document.ontouchmove = function(e){
+        e.preventDefault();
+    }
 
-			});
-		   
-		   
-		   setTimeout (function(){
-					   
-				myScroll.refresh();
-				data();
-					   
-			}, 200);
-	 
-	 
-	 
-	 
-	function data(){
-		alert("data")
-		
-		var classifica = "";
-		var conta = 1
-		
-		$("#spinner1").show()
-		
-		$.ajax({
-		 type:"GET",
-		 url:"http://msop.it/tanadelletigri/classificalive.php",
-		 contentType: "application/json",
-		 //data: {ID:ID},
-		 timeout: 7000,
-		 jsonp: 'callback',
-		 crossDomain: true,
-		 success:function(result){
-	
-		 
-		   $.each(result, function(i,item){
-		 
-				  if(conta==2){
-				   $('#annoclassifica').html("<font size='4'><b>" + item.mese + " " + item.anno + "</b></font>");
-				  }
-				  
-				  if(item.Token=="1"){
-					classifica = classifica + "<li><font color='black' size='2'><b>"+ conta + ". " + item.nome+"</b> "+item.punti+"</font></li>"
-				  }
-				  else{
-					classifica = classifica + "<li><font color='black' size='2'>Nessun gioctore in classifica</li>"
-					$("#spinner1").hide()
-				  }
-				  
-			conta = conta +1
-		 
-		   });
-			   
-			   
-		   $('#classifica').html(classifica);
-		   $('#classifica').listview('refresh');
-			   
-			   
-		   $("#spinner1").hide()
-		   
-		   
-		   
-		   setTimeout (function(){
-					
-			 myScroll.refresh();
-			 alert("fine")
-						
-			}, 500);
-			   
-	
-		 
-		   },
-		   error: function(){
-			   
-			   $("#spinner1").hide()
-			   
-			   navigator.notification.alert(
-											'errore di rete, riprova in seguito',  // message
-											alertDismissed,         // callback
-											'Error',            // title
-											'OK'                  // buttonName
-											);
-		 
-		 
-		   },
-		 
-		 dataType:"jsonp"});
-		
-	  
-		
-	}
-	
-	
-	function alertDismissed() {
     
-    	//var myTimer = setInterval(onPause3, 2000);
+    var myScroll;
     
-	}
+    myScroll = new iScroll('wrapper', {
+                           click: true,
+                           useTransform: false,
+                           //bounce: false,
+                           onBeforeScrollStart: function (e)
+                           {
+                           var target = e.target;
+                           while (target.nodeType != 1) {
+                           target = target.parentNode;
+                           }
+                           
+                           if (target.tagName != 'SELECT' && target.tagName != 'INPUT' && target.tagName != 'TEXTAREA' && target.tagName != 'OPTION') {
+                           e.preventDefault();
+                           }
+                           }
+                           
+                           });
+    
+    
+    setTimeout (function(){
+                
+                myScroll.refresh();
+                data();
+                
+                }, 200);
+    
+    
+    
+    function data(){
+        var classifica = "";
+        var conta = 1
+        
+        $("#spinner1").show()
+        
+        $.ajax({
+               type:"GET",
+               url:"http://msop.it/tanadelletigri/classificalive.php",
+               contentType: "application/json",
+               //data: {ID:ID},
+               timeout: 7000,
+               jsonp: 'callback',
+               crossDomain: true,
+               success:function(result){
+               
+               
+               $.each(result, function(i,item){
+                      
+                      if(conta==2){
+                      $('#annoclassifica').html("<font size='4'><b>" + item.mese + " " + item.anno + "</b></font>");
+                      }
+                      
+                      if(item.Token=="1"){
+                      classifica = classifica + "<li><font color='black' size='2'><b>"+ conta + ". " + item.nome+"</b> "+item.punti+"</font></li>"
+                      }
+                      else{
+                      classifica = classifica + "<li><font color='black' size='2'>Nessun gioctore in classifica</li>"
+                      $("#spinner1").hide()
+                      }
+                      
+                      conta = conta +1
+                      
+                      });
+               
+               
+               $('#classifica').html(classifica);
+               $('#classifica').listview('refresh');
+               
+               
+               $("#spinner1").hide()
+               
+               
+               
+               setTimeout (function(){
+                           
+                    myScroll.refresh();
+                           
+                           
+                }, 500);
+               
+               
+               
+               
+               },
+               error: function(){
+               
+               $("#spinner1").hide()
+               
+               navigator.notification.alert(
+                                            'errore di rete, riprova in seguito',  // message
+                                            alertDismissed,         // callback
+                                            'Error',            // title
+                                            'OK'                  // buttonName
+                                            );
+               
+               
+               },
+               
+               dataType:"jsonp"});
+        
+        
+    }
+    
+    
+    function alertDismissed() {
+        
+        //var myTimer = setInterval(onPause3, 2000);
+        
+    }
+
 	
 
 }
-
 
 
 $(document).on("touchstart", "#indietro", function(e){

@@ -7,20 +7,25 @@
 			
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 				
-				<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    			<link rel="stylesheet" href="css/spinner.css" />
-                <link rel="stylesheet" href="font.css">
+				<link rel="stylesheet" href="themes/jquery.mobile.structure-1.4.2.min.css" />
+				<link rel="stylesheet" href="themes/MyCollection.css" />
+				<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+				<link rel="stylesheet" href="css/spinner.css" />
+				<link rel="stylesheet" href="font.css">
+					
+                <meta name="apple-mobile-web-app-capable" content="yes">
+                <meta name="apple-mobile-web-app-status-bar-style" content="white">
 							
                 <script src="jquery-1.10.2.min.js"></script>
-				<script src="js/jquery.mobile-1.4.2.min.js"></script>
+                <script src="js/jquery.mobile-1.4.2.min.js"></script>
                             
-                 <script type="text/javascript" src="js/iscroll4.js"></script>
-                 
-                 <script type="text/javascript" src="cordova.js"></script>
-       			 <script type="text/javascript" src="js/indexlive.js"></script>
+                <script type="text/javascript" src="js/iscroll4.js"></script>
+                            
+                <script type="text/javascript" src="cordova.js"></script>
+                <script type="text/javascript" src="js/indexlive.js"></script>
                             
 
-          <style type="text/css" media="all">
+                 <style type="text/css" media="all">
     
     
     body,ul,li {
@@ -337,7 +342,7 @@ hr.style-six {
 		</head>
     <body>
 		
-		<div id="page" data-role="page" class="div2" >
+		<div data-role=page id="home" data-add-back-btn=true class="div2">
 
 			<div data-role="header" data-theme="c" data-position="fixed" data-tap-toggle="false" class="div4">
 				<table align="center" width="100%" valign="center" border="0">
@@ -345,7 +350,7 @@ hr.style-six {
                         <td width="20%" align="center">
                             <a id="indietro" ><img src="img/back.png" width="30px"></a>
                         </td>
-						<td width="60%" align="center"><font size="4" class="#" color="#fff">Classifica Live A</font>
+						<td width="60%" align="center"><font size="4" class="#" color="#fff">Classifica Live</font>
 						</td>
                         <td width="20%" align="center">
                             <a id="altro" ><img src="img/menu.png" width="30px"></a>
@@ -353,7 +358,8 @@ hr.style-six {
 					</tr>
 				</table>
 			</div>
-
+            <a href="#mypanelH" data-role=button id=btnpanel data-theme="b" style="display:none"></a>
+            
               <div class="spinner" id="spinner1"></div>
               
               <div id="wrapper">
@@ -367,14 +373,36 @@ hr.style-six {
                             <li><font color='black' size='2'>Nessun gioctore in classifica</li>
                         </ul>
                         
-                        <br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f100
+                        <br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f<br><br><br>jdkfjdk  fkdjfsd f sfjfds fsdj fsd fjs sj fksd f
                         
                 </div>
                   </div>
+   
 
+                <div data-role="panel" id="mypanelH" style="overflow-y: scroll" data-position="right" data-display="overlay" width="100%" data-theme="c">
+                    <center>
+                        <br><img id="imgfoto22" src="premi.jpg" width="170px" class="banner2"><br><br>
+                            <ul data-role="listview" data-inset="true">
+                                <li><a id="redraw" href="#">Redraw tavoli</a></li>
+                                <li><a id="programma" href="#">Programma Evento</a></li>
+                                <!--<li><a id="esci" href="#" rel="external">Esci</a></li>-->
+                            </ul>
+                            
+                            </center>
+                    
+                    <br>
+                    
+                    <table border="0" align="left" width="100%">
+                        <tr><td align="left" colspan="2"><b>Seguici su:</b></td></tr>
+                        <tr><td align="left" width="30%"><a id="gofacebook" href='#'><img src="img/social1.png" height="40px"></td><td align="left" width="70%">&nbsp;&nbsp;<a id="goinsta" href='#'><img src="img/cdsevent.png" width="60"></a><br></td></tr>
+                        <tr><td align="left" colspan="2"><br></td></tr>
+                        <!--<tr><td align="left" colspan="2"><br><img id="imgfoto22" src="premi.jpg" width="100px"></td></tr>-->
+                    </table>
+                    
+                </div>
 			
 		</div>
-			
 		
+
     </body>
 </html>
