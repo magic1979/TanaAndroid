@@ -2,18 +2,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
 	
-	document.ontouchmove = function(e){
-		e.preventDefault();
-	}
-	
-	
-	//$('#classifica').listview('refresh');
-    
-    document.addEventListener("touchmove",function(e) {
-        e.preventDefault();
-    },
-    false
-    );
     
     var myScroll;
     
