@@ -3,13 +3,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     
 	
-	 data();
-	
-	
-	function test () {
-		//alert();
-		//data(1);
-	}
+	 //data();
 	
 	
     var myScroll;
@@ -37,7 +31,7 @@ function onDeviceReady() {
         myScroll.refresh();
                 
                 
-     }, 2000);
+     }, 500);
 	
 
 }
@@ -83,6 +77,14 @@ function data(){
            
            
        $("#spinner1").hide()
+	   
+	   
+	   
+	   setTimeout (function(){
+                
+       	 myScroll.refresh();
+                    
+        }, 500);
            
 
 	 
@@ -103,22 +105,7 @@ function data(){
 	 
 	 dataType:"jsonp"});
 	
-    
-	//alert("scroll")
-    
-    //<img src='images/fiches.png' width='20px'>
-
-	/*setTimeout(function() {
-	 
-	 myScroll = new IScroll('#wrapper', { click: true });
-	 
-	 setTimeout (function(){
-	 myScroll.refresh();
-	 
-	 }, 500);
-	 
-		}, 500);*/
-	
+  
 	
 }
 
