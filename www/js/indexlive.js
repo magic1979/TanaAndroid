@@ -1,8 +1,22 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
-	
     
+    
+    document.ontouchmove = function(e){
+        e.preventDefault();
+    }
+
+	
+	 data();
+	
+	
+	function test () {
+		//alert();
+		//data(1);
+	}
+	
+	
     var myScroll;
     
     myScroll = new IScroll('#wrapper', {
@@ -24,33 +38,11 @@ function onDeviceReady() {
     
     
     setTimeout (function(){
+                
         myScroll.refresh();
                 
-    }, 500);
-
-	
-	 data();
-	
-	
-	function test () {
-		//alert();
-		//data(1);
-	}
-	
-	
-	/*setTimeout(function() {
-			   
-		myScroll = new IScroll('#wrapper', { click: true });
-			   
-			   
-		setTimeout (function(){
-			myScroll.refresh();
-						   
-		}, 500);
-			   
-
-		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-	}, 500);*/
+                
+     }, 2000);
 	
 
 }
@@ -97,11 +89,7 @@ function data(){
            
        $("#spinner1").hide()
            
-       setTimeout (function(){
-         myScroll.refresh();
-                       
-       }, 500);
-	 
+
 	 
 	   },
 	   error: function(){
