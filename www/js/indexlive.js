@@ -3,9 +3,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     
 	
-	 //data();
-	
-	
     var myScroll;
     
     myScroll = new IScroll('#wrapper', {
@@ -29,85 +26,88 @@ function onDeviceReady() {
     setTimeout (function(){
                 
         myScroll.refresh();
-                
+        data();
                 
      }, 500);
+	 
+	 
+	function data(){
+		var classifica = "";
+		var conta = 1
+		
+		$("#spinner1").show()
+		
+		$.ajax({
+		 type:"GET",
+		 url:"http://msop.it/tanadelletigri/classificalive.php",
+		 contentType: "application/json",
+		 //data: {ID:ID},
+		 timeout: 7000,
+		 jsonp: 'callback',
+		 crossDomain: true,
+		 success:function(result){
+	
+		 
+		   $.each(result, function(i,item){
+		 
+				  if(conta==2){
+				   $('#annoclassifica').html("<font size='4'><b>" + item.mese + " " + item.anno + "</b></font>");
+				  }
+				  
+				  if(item.Token=="1"){
+					classifica = classifica + "<li><font color='black' size='2'><b>"+ conta + ". " + item.nome+"</b> "+item.punti+"</font></li>"
+				  }
+				  else{
+					classifica = classifica + "<li><font color='black' size='2'>Nessun gioctore in classifica</li>"
+					$("#spinner1").hide()
+				  }
+				  
+			conta = conta +1
+		 
+		   });
+			   
+			   
+		   $('#classifica').html(classifica);
+		   $('#classifica').listview('refresh');
+			   
+			   
+		   $("#spinner1").hide()
+		   
+		   
+		   
+		   setTimeout (function(){
+					
+			 myScroll.refresh();
+						
+			}, 500);
+			   
+	
+		 
+		   },
+		   error: function(){
+			   
+			   $("#spinner1").hide()
+			   
+			   navigator.notification.alert(
+											'errore di rete, riprova in seguito',  // message
+											alertDismissed,         // callback
+											'Error',            // title
+											'OK'                  // buttonName
+											);
+		 
+		 
+		   },
+		 
+		 dataType:"jsonp"});
+		
+	  
+		
+	}
 	
 
 }
 
-function data(){
-	var classifica = "";
-    var conta = 1
-    
-    $("#spinner1").show()
-	
-	$.ajax({
-	 type:"GET",
-	 url:"http://msop.it/tanadelletigri/classificalive.php",
-	 contentType: "application/json",
-	 //data: {ID:ID},
-	 timeout: 7000,
-	 jsonp: 'callback',
-	 crossDomain: true,
-	 success:function(result){
 
-	 
-	   $.each(result, function(i,item){
-	 
-              if(conta==2){
-               $('#annoclassifica').html("<font size='4'><b>" + item.mese + " " + item.anno + "</b></font>");
-              }
-              
-              if(item.Token=="1"){
-                classifica = classifica + "<li><font color='black' size='2'><b>"+ conta + ". " + item.nome+"</b> "+item.punti+"</font></li>"
-              }
-              else{
-                classifica = classifica + "<li><font color='black' size='2'>Nessun gioctore in classifica</li>"
-                $("#spinner1").hide()
-              }
-              
-        conta = conta +1
-	 
-	   });
-           
-           
-       $('#classifica').html(classifica);
-       $('#classifica').listview('refresh');
-           
-           
-       $("#spinner1").hide()
-	   
-	   
-	   
-	   setTimeout (function(){
-                
-       	 myScroll.refresh();
-                    
-        }, 500);
-           
-
-	 
-	   },
-	   error: function(){
-           
-           $("#spinner1").hide()
-           
-           navigator.notification.alert(
-                                        'errore di rete, riprova in seguito',  // message
-                                        alertDismissed,         // callback
-                                        'Error',            // title
-                                        'OK'                  // buttonName
-                                        );
-	 
-	 
-	   },
-	 
-	 dataType:"jsonp"});
-	
-  
-	
-}
 
 $(document).on("touchstart", "#indietro", function(e){
 			   
@@ -121,6 +121,8 @@ $(document).on("tap", "#altro", function(e){
                $("#btnpanel").click();
                
 });
+
+
 
 function alertDismissed() {
     
