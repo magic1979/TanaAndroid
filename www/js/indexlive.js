@@ -2,11 +2,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     
-    
-    document.ontouchmove = function(e){
-        e.preventDefault();
-    }
-
 	
 	 data();
 	
