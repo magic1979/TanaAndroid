@@ -14,6 +14,32 @@ function onDeviceReady() {
     },
     false
     );
+    
+    
+    var myScroll;
+    
+    myScroll = new IScroll('#wrapper', {
+                           click: true,
+                           useTransform: false,
+                           //bounce: false,
+                           onBeforeScrollStart: function (e)
+                           {
+                           var target = e.target;
+                           while (target.nodeType != 1) {
+                           target = target.parentNode;
+                           }
+                           
+                           if (target.tagName != 'SELECT' && target.tagName != 'INPUT' && target.tagName != 'TEXTAREA' && target.tagName != 'OPTION') {
+                           e.preventDefault();
+                           }
+                           }
+                           });
+    
+    
+    setTimeout (function(){
+                myScroll.refresh();
+                
+                }, 500);
 
 	
 	 data();
@@ -79,6 +105,11 @@ function data(){
            
            
            $("#spinner1").hide()
+           
+           setTimeout (function(){
+                       myScroll.refresh();
+                       
+                       }, 500);
            
            
            },
