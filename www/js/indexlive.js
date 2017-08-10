@@ -3,37 +3,41 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
 	
 	alert("Welcome")
-    
-	
-    var myScroll;
-    
-    myScroll = new IScroll('#wrapper', {
-                           click: true,
-                           useTransform: false,
-                           //bounce: false,
-                           onBeforeScrollStart: function (e)
-                           {
-                           var target = e.target;
-                           while (target.nodeType != 1) {
-                           target = target.parentNode;
-                           }
-                           
-                           if (target.tagName != 'SELECT' && target.tagName != 'INPUT' && target.tagName != 'TEXTAREA' && target.tagName != 'OPTION') {
-                           e.preventDefault();
-                           }
-                           }
-                           });
-    
-    
-    setTimeout (function(){
-                
-        myScroll.refresh();
-        data();
-                
-     }, 200);
+     
+	 var myScroll;
+		   
+		   myScroll = new iScroll('wrapper', {
+								click: true,
+								useTransform: false,
+								//bounce: false,
+								onBeforeScrollStart: function (e)
+								{
+								var target = e.target;
+								while (target.nodeType != 1) {
+								target = target.parentNode;
+								}
+								
+								if (target.tagName != 'SELECT' && target.tagName != 'INPUT' && target.tagName != 'TEXTAREA' && target.tagName != 'OPTION') {
+								e.preventDefault();
+								}
+								}
+
+			});
+		   
+		   
+		   setTimeout (function(){
+					   
+				myScroll.refresh();
+				data();
+					   
+			}, 200);
+	 
+	 
 	 
 	 
 	function data(){
+		alert("data")
+		
 		var classifica = "";
 		var conta = 1
 		
@@ -80,6 +84,7 @@ function onDeviceReady() {
 		   setTimeout (function(){
 					
 			 myScroll.refresh();
+			 alert("fine")
 						
 			}, 500);
 			   
@@ -106,6 +111,13 @@ function onDeviceReady() {
 		
 	}
 	
+	
+	function alertDismissed() {
+    
+    	//var myTimer = setInterval(onPause3, 2000);
+    
+	}
+	
 
 }
 
@@ -125,12 +137,6 @@ $(document).on("tap", "#altro", function(e){
 });
 
 
-
-function alertDismissed() {
-    
-    //var myTimer = setInterval(onPause3, 2000);
-    
-}
 
 $(document).on("touchstart", "#redraw", function(e){
                
