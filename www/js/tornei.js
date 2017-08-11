@@ -261,7 +261,7 @@ var app = {
 		
 		$(document).on("touchstart", "#btncount", function(e){
 						
-			window.location.href = "index2v2.html";
+			window.location.href = "index33.html";
 					   
 		});
         
