@@ -219,16 +219,23 @@ var app = {
         
         $(document).on("touchstart", "#gofacebook", function(e){
                        
-                       var ref = window.open('https://www.facebook.com/groups/tanadelletigripoker/', '_system', 'location=no');
+            var ref = window.open('https://www.facebook.com/groups/tanadelletigripoker/', '_system', 'location=no');
                        
-                       });
+         });
         
         
         $(document).on("touchstart", "#goinsta", function(e){
                        
-                       var ref = window.open('http://www.cdsevents.it', '_system', 'location=no');
-                       });
-		
+              var ref = window.open('http://www.cdsevents.it', '_system', 'location=no');
+         });
+					   
+					   
+					   
+	     
+		$(document).on("touchstart", "#bannerhome", function(e){
+                       
+               var ref = window.open('http://msop.it/waddall/splash.html', '_system', 'location=no');
+        });
 		
 		
 

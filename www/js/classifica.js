@@ -226,10 +226,14 @@ var app = {
         
         $(document).on("touchstart", "#goinsta", function(e){
                        
-                       var ref = window.open('http://www.cdsevents.it', '_system', 'location=no');
-                       });
+                var ref = window.open('http://www.cdsevents.it', '_system', 'location=no');
+         });
 		
-		
+		 
+		 $(document).on("touchstart", "#bannerpiw", function(e){
+                       
+                  var ref = window.open('http://pokeritaliaweb.org', '_system', 'location=no');
+          });
 		
 
        $(document).on("touchstart", "#indietro", function(e){
