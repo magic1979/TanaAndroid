@@ -68,7 +68,7 @@
                           if (conta==1)
                           {
                           if(item.Token=="1"){
-                          $('#livelli').html("<font color='black' size='2'>Level:<b>"+item.livello+"</b>,&nbsp;&nbsp;Player:<b>"+item.player+"</b>,&nbsp;&nbsp;Prize:<b>"+item.prize+"&euro;</b></font>");
+                          $('#livelli').html("<font color='black' size='2'>Level:<b>"+item.livello+"</b>,&nbsp;&nbsp;Player:<b>"+item.player+"</b>,&nbsp;&nbsp;Prize:<b>"+item.prize+" &euro;</b></font>");
                           }
                           else{
                           $('#livelli').html("<font color='black' size='2'>Torneo non ancora iniziato</font>");
@@ -107,8 +107,6 @@
                    },
                    
                    dataType:"jsonp"});
-                   
-
                    
                    
         }
@@ -1231,7 +1229,7 @@
                 <td width="60%" align="center"><font size="4" class="#" color="#fff">Chip Count</font>
                 </td>
                 <td width="20%" align="center">
-                    <a id="altro2" ><img src="img/menu.png" width="30px"></a>
+                    <a id="altro2" ></a>
                 </td>
             </tr>
         </table>
@@ -1270,7 +1268,14 @@
     
     $(document).on("touchstart", "#indietro", function(e){
                    
-            window.location.href = "tornei.html";
+            //window.location.href = "tornei.html";
+			
+			window.plugins.nativepagetransitions.slide({
+                'direction': 'right',
+                'duration': 400,
+                'androiddelay': 50,
+                'href': 'tornei.html'
+            });
                    
     });
     
@@ -1319,6 +1324,8 @@
         });
         
 </script>
+
+<script type="text/javascript" src="cordova.js"></script>
                        
 </body>
 
