@@ -148,7 +148,7 @@ var app = {
                 
                 
                 function newLocation() {
-                    var adURL = new Array("pokeritaliaweb.org","http://msop.it/waddall/splash.html");
+                    var adURL = new Array("pokeritaliaweb.org","msop.it/waddall/splash.html");
                     
                     //document.location.href = "http://www." + adURL[thisAd];
                     
@@ -419,9 +419,9 @@ var app = {
 			//window.location.href = "index.html";
 			//$.mobile.changePage ($("#home"));
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  100,
+				"androiddelay"   :  500,
                 "href" : "index.html"
             });
 			
@@ -435,9 +435,9 @@ var app = {
             //$.mobile.changePage ($("#home"));
 			
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  100,
+				"androiddelay"   :  500,
                 "href" : "index.html"
             });
                        
@@ -450,9 +450,9 @@ var app = {
 			//window.location.href = "index33.html";
 			
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  100,
+				"androiddelay"   :  500,
                 "href" : "index33.html"
             });
 					   
@@ -465,7 +465,7 @@ var app = {
 			window.plugins.nativepagetransitions.fade({
                 "duration"       :  700, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  100,
+				"androiddelay"   :  500,
                 "href" : "#home3"
             });
 			
@@ -478,7 +478,7 @@ var app = {
 		   window.plugins.nativepagetransitions.fade({
                 "duration"       :  700, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  100,
+				"androiddelay"   :  500,
                 "href" : "#home4"
             });
                        
@@ -489,9 +489,9 @@ var app = {
                        
            // window.location.href = "index2live.html";
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  100,
+				"androiddelay"   :  500,
                 "href" : "index2live.html"
             });
                        
@@ -502,9 +502,9 @@ var app = {
                        
            // window.location.href = "index2online.html";
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  100,
+				"androiddelay"   :  500,
                 "href" : "index2online.html"
             });
                        
@@ -515,9 +515,9 @@ var app = {
             //window.location.href = "index2satonline.html";
 			
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  100, 
+				"androiddelay"   :  500, 
                "href" : "index2satonline.html"
             });
                        
@@ -529,9 +529,9 @@ var app = {
             //window.location.href = "index2satlive.html";
 			
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  100,
+				"androiddelay"   :  500,
                 "href" : "index2satlive.html"
             });
                        
@@ -545,7 +545,7 @@ var app = {
 			window.plugins.nativepagetransitions.fade({
                 "duration"       :  700, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  100,
+				"androiddelay"   :  500,
                 "href" : "#home2"
             });
                        
