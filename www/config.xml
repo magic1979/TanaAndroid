@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
-		id        = "com.tana"
+		id        = "com.tanadelletigri"
 		versionCode="1"
 		version   = "1">
 		<name>TanadelleTigri</name>
-		<description>Poker Event TanadelleTigri, Torneo di Poker TanadelleTigri</description>
+		<description>Poker Event Tana delle Tigri, Torneo di Poker Tana delle Tigri</description>
 		<author href="http://msop.it" email="info@msop.it">
 			Associzione Game Answer
 		</author>
