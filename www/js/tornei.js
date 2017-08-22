@@ -257,7 +257,7 @@ var app = {
                 "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
 				"androiddelay"   :  600,
-                'href': 'tornei.html'
+                'href': 'index.html'
             });
                        
         });

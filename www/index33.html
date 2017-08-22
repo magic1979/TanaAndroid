@@ -1216,7 +1216,7 @@
     
 </head>
 
-<body>
+<body onload="onLoad()">
     
 <div data-role=page id="home" data-add-back-btn=true class="div2">
     
@@ -1263,8 +1263,24 @@
 </div>
 
 <script>
+
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+	
+	function onDeviceReady() {
+        document.addEventListener("resume", onResume, false);
+		
+		data();
+		
+    }
+	
+	 function onResume() {
+	 
+	   data();
+	 
+    }
     
-    data();
     
     $(document).on("touchstart", "#indietro", function(e){
                    

@@ -1,6 +1,8 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
+	document.addEventListener("resume", onResume, false);
+	
 	
 	document.ontouchmove = function(e){
 		e.preventDefault();
@@ -111,6 +113,17 @@ function onDeviceReady() {
 	
 
 }
+
+function onResume() {
+	 
+	   window.plugins.nativepagetransitions.fade({
+                "duration"       :  1000, // in milliseconds (ms), default 400
+				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
+				"androiddelay"   :  100,
+                "href" : "index.html"
+            });
+	 
+    }
 
 
 
