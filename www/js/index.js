@@ -148,7 +148,7 @@ var app = {
                 
                 
                 function newLocation() {
-                    var adURL = new Array("pokeritaliaweb.org","msop.it/waddall/splash.html");
+                    var adURL = new Array("pokeritaliaweb.org","pokernelmondo.com");
                     
                     //document.location.href = "http://www." + adURL[thisAd];
                     
@@ -160,7 +160,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("img/bannerpiw.png","img/banneradd.jpg");
+                    var adImages = new Array("img/bannerpiw.png","img/bannermondo.jpg");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
