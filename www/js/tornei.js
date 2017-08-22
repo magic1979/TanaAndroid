@@ -253,7 +253,12 @@ var app = {
 
         $(document).on("touchstart", "#indietro2", function(e){
                        
-            window.location.href = "index.html";
+            window.plugins.nativepagetransitions.fade({
+                "duration"       :  1000, // in milliseconds (ms), default 400
+				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
+				"androiddelay"   :  600,
+                'href': 'tornei.html'
+            });
                        
         });
 		
@@ -261,7 +266,12 @@ var app = {
 		
 		$(document).on("touchstart", "#btncount", function(e){
 						
-			window.location.href = "index33.html";
+			window.plugins.nativepagetransitions.fade({
+                "duration"       :  1000, // in milliseconds (ms), default 400
+				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
+				"androiddelay"   :  600,
+                "href" : "index33.html"
+            });
 					   
 		});
         
@@ -308,7 +318,12 @@ var app = {
         
         $(document).on("touchstart", "#tornei", function(e){
                        
-            prendibannertop()
+            window.plugins.nativepagetransitions.fade({
+                "duration"       :  1000, // in milliseconds (ms), default 400
+				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
+				"androiddelay"   :  500,
+                "href" : "index33.html"
+            });
                        
                        
         });
