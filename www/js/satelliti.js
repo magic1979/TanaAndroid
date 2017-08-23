@@ -244,7 +244,7 @@ var app = {
 			//window.location.href = "index.html";
 			//$.mobile.changePage ($("#home"));
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  1000, // in milliseconds (ms), default 400
+                "duration"       :  700, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
 				"androiddelay"   :  500,
                 "href" : "index.html"
@@ -293,7 +293,7 @@ var app = {
             //window.location.href = "index2satonline.html";
 			
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  1000, // in milliseconds (ms), default 400
+                "duration"       :  700, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
 				"androiddelay"   :  500, 
                "href" : "index2satonline.html"
@@ -307,7 +307,7 @@ var app = {
             //window.location.href = "index2satlive.html";
 			
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  1000, // in milliseconds (ms), default 400
+                "duration"       :  700, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
 				"androiddelay"   :  500,
                 "href" : "index2satlive.html"

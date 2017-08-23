@@ -276,7 +276,7 @@ var app = {
                        
            // window.location.href = "index2live.html";
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  1000, // in milliseconds (ms), default 400
+                "duration"       :  700, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
 				"androiddelay"   :  500,
                 "href" : "index2live.html"
@@ -289,7 +289,7 @@ var app = {
                        
            // window.location.href = "index2online.html";
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  1000, // in milliseconds (ms), default 400
+                "duration"       :  700, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
 				"androiddelay"   :  500,
                 "href" : "index2online.html"

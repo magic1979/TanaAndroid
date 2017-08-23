@@ -254,9 +254,9 @@ var app = {
         $(document).on("touchstart", "#indietro2", function(e){
                        
             window.plugins.nativepagetransitions.fade({
-                "duration"       :  1000, // in milliseconds (ms), default 400
+                "duration"       :  700, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  600,
+				"androiddelay"   :  500,
                 'href': 'index.html'
             });
                        
@@ -267,9 +267,9 @@ var app = {
 		$(document).on("touchstart", "#btncount", function(e){
 						
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  1000, // in milliseconds (ms), default 400
+                "duration"       :  700, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  600,
+				"androiddelay"   :  500,
                 "href" : "index33.html"
             });
 					   
@@ -319,7 +319,7 @@ var app = {
         $(document).on("touchstart", "#tornei", function(e){
                        
             window.plugins.nativepagetransitions.fade({
-                "duration"       :  1000, // in milliseconds (ms), default 400
+                "duration"       :  700, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
 				"androiddelay"   :  500,
                 "href" : "index33.html"
