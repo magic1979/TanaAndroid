@@ -2,6 +2,13 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     document.addEventListener("resume", onResume, false);
+	
+	/*$(function() {
+	  FastClick.attach(document.body);
+    });*/
+	
+	 FastClick.attach(document.body);
+
     
     document.ontouchmove = function(e){
         e.preventDefault();
@@ -134,6 +141,7 @@ function onResume() {
 	 
     }
 
+// $(document).on( "vclick", "p", function() {
 
 $(document).on("touchstart", "#indietro", function(e){
 					   

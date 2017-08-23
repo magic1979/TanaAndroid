@@ -6,6 +6,8 @@ function onDeviceReady() {
 	document.ontouchmove = function(e){
 		e.preventDefault();
 	}
+	
+	FastClick.attach(document.body);
     
     
     var myScroll;

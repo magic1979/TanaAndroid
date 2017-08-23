@@ -8,6 +8,8 @@ function onDeviceReady() {
 		e.preventDefault();
 	}
 	
+	FastClick.attach(document.body);
+	
 	
     var myScroll;
     

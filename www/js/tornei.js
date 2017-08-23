@@ -48,7 +48,7 @@ var app = {
 		
 
 		
-		
+		FastClick.attach(document.body);
         
 
 		////////// controllo internet ///////////////
