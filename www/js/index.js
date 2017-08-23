@@ -83,7 +83,133 @@ var app = {
 		
 		if(connectionStatus=='online'){
             
-          //prendibannertop()
+          
+			//// PUSH //////
+			
+			
+			var pushNotification;
+			var token
+
+			
+			pushNotification = window.plugins.pushNotification;
+			
+			
+			pushNotification.register(
+			successHandler,
+			errorHandler,
+			{
+				"senderID":"392875420036",
+				"ecb":"onNotification"
+			});
+			
+			function tokenHandler (result) {
+			
+				testa(result);
+
+			}
+			
+			
+			function successHandler (result) {
+
+				testa(result);
+			}
+			
+			function errorHandler (error) {
+
+			}
+			
+			
+			function onNotification(e) {
+					   
+				switch( e.event )
+				{
+					case 'registered':
+					if ( e.regid.length > 0 )
+					{
+						//$("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+						// Your GCM push server needs to know the regID before it can push to this device
+						// here is where you might want to send it the regID for later use.
+						alert("regID = " + e.regid);
+					}
+					break;
+					case 'message':
+						// if this flag is set, this notification happened while we were in the foreground.
+						// you might want to play a sound to get the user's attention, throw up a dialog, etc.
+						if (e.foreground)
+						{
+							alert('INLINE NOTIFICATION');
+							// on Android soundname is outside the payload.
+							// On Amazon FireOS all custom attributes are contained within payload
+								   
+						}
+						else
+						{	// otherwise we were launched because the user touched a notification in the notification tray.
+							if (e.coldstart)
+								alert('<li>--COLDSTART NOTIFICATION--');
+							else
+								alert('<li>--BACKGROUND NOTIFICATION--');
+						}
+						   
+						   alert('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+						//android only
+						   alert('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+						//amazon-fireos only
+						//$("#app-status-ul").append('<li>MESSAGE -> TIMESTAMP: ' + e.payload.timeStamp + '</li>');
+					break;
+					case 'error':
+						alert('<li>ERROR -> MSG:' + e.msg + '</li>');
+					break;
+					default:
+						alert('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+					break;
+				}
+			}
+			
+			
+			///////// PUSH NUOVE ///////
+	
+
+	
+	
+	function testa (testo) {
+		
+		
+		setTimeout (function(){
+					
+		
+		$.ajax({
+			   type:"GET",
+			   url:"http://www.msop.it/tanadelletigri/Check_RegToken.asp",
+			   data: {device:testo,platform:"android"},
+			   contentType: "application/json",
+			   json: 'callback',
+			   timeout: 7000,
+			   crossDomain: true,
+			   success:function(result){
+			   
+			   $.each(result, function(i,item){
+			   
+			     setTimeout (function(){
+					localStorage.setItem("Token", testo);
+					//alert(testo);
+				}, 500);
+			   
+			   });
+			   
+			   },
+			   error: function(){
+			   
+				 //alert("No")
+			   
+			   },
+			   dataType:"json"});
+					
+		}, 500);
+		
+		
+	}
+	
+	///// FINE PUSH NOTIFICATION ///////////
 		
 		  var uno;
 		  var due;
@@ -148,7 +274,7 @@ var app = {
                 
                 
                 function newLocation() {
-                    var adURL = new Array("pokeritaliaweb.org","pokernelmondo.com");
+                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org");
                     
                     //document.location.href = "http://www." + adURL[thisAd];
                     
@@ -160,7 +286,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("img/bannerpiw.png","img/bannermondo.jpg");
+                    var adImages = new Array("img/bannermondo.jpg","img/bannerpiw.png");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
@@ -388,29 +514,6 @@ var app = {
 		
 		
 		
-		
-		$(document).on("touchstart", "#bliard", function(e){
-					   
-			//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
-					   
-			//window.location.href = "spec.html";
-					   
-		});
-		
-		
-		
-		// FINE //
-		
-		$(document).on("touchstart", "#btnlancia2", function(e){
-			$("#lastpunt").hide()
-			localStorage.setItem("round","1")
-			localStorage.setItem("sfidalanciata","1")
-		    localStorage.setItem("sfida","1")
-			
-			$("#lastpunt").hide()
-			
-			$("#tbllancia").show()
-		});
 		
 		
 		
@@ -779,378 +882,6 @@ var app = {
 			$("#bliard").show()
 			$("#btnlancia").show()
 			$("#risultati").show()
-		});
-		
-		
-		
-		$(document).on("touchstart", "#going", function(e){
-					   
-					   navigator.notification.confirm(
-													  'ROUND 1 la somma delle palle colpite deve essere 10',  // message
-													  onConfirm1,              // callback to invoke with index of button pressed
-													  'Spegni',            // title
-													  'Inizia,Annulla'      // buttonLabels
-													  );
-					   
-						
-
-		});
-		
-		
-		function onConfirm1(button) {
-			
-			if(button==1){    //If User selected No, then we just do nothing
-				
-				localStorage.setItem("sfida","0")
-				localStorage.setItem("round","1")
-				
-				$("#load").show()
-				
-				localStorage.setItem("session10","0")
-				
-				localStorage.setItem("esatte","0")
-				$("#esatte2").html("0")
-				$("#esatte3").html("0")
-				
-				$("#totale").html("0/10")
-				$("#bianca0").hide()
-				$("#bianca").hide()
-				$("#bianca1").hide()
-				$("#bianca2").hide()
-				
-				$("#allenati").hide()
-				$("#lastpunt").hide()
-				
-				var uno;
-				var due;
-				var tre;
-				var quattro;
-				var numero = 1;
-				var numero1 = 2;
-				var numero2 = 3;
-				var numero3 = 4;
-				var numero4 = 5;
-				var numero5 = 6;
-				
-				//DATA
-				var today = new Date();
-				var dd = today.getDate();
-				var mm = today.getMonth()+1;//January is 0, so always add + 1
-				
-				var ora = today.getHours()
-				if(ora<10){ora="0"+ora}
-				
-				var minuti = today.getMinutes();
-				if(minuti<10){minuti="0"+minuti}
-				
-				var secondi = today.getSeconds();
-				if(secondi<10){secondi="0"+secondi}
-				
-				
-				var yyyy = today.getFullYear();
-				if(dd<10){dd="0"+dd}
-				if(mm<10){mm="0"+mm}
-				today = dd+'/'+mm+'/'+yyyy;
-				
-				$("#stamp").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-				$("#stamp2").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-				var ora_cell = yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00";
-				
-				localStorage.setItem("ora_cell", ora_cell);
-				
-				
-				localStorage.setItem("start","0")
-				localStorage.setItem("punteggio1","0")
-				var somma=0;
-				var punto=0;
-				
-				
-				//admob.hideBanner()
-				
-				//AdMob.removeBanner();
-				
-				localStorage.setItem("esatte",0)
-				$("#esatte2").html("0")
-				$("#esatte3").html("0")
-				
-				playAudio('successSound');
-				
-				localStorage.setItem("session10","0")
-				localStorage.setItem("punteggio1","0")
-				somma=0
-				punto = 0
-				$("#somma").html("0")
-				$("#totale").html("0")
-				$("#gioco").show()
-				
-				
-				$("#going").hide()
-				
-				setTimeout(function() {
-						   
-						   playAudio('successSound2');
-						   
-						   $("#load").hide()
-						   
-						   $("#dati").show()
-						   $("#dati0").show()
-								 
-						   $("#biliardo").show();
-						   
-						   $("#somma").html("0")
-						   $("#totale").html("0")
-						   countdown1(0);
-						   
-						   }, 1000);
-				
-				localStorage.setItem("start","0")
-				
-				prendinumeri3(0)
-
-			}
-			
-		}
-
-		
-		
-		$(document).on("touchstart", "#going2", function(e){
-					   
-					   navigator.notification.confirm(
-													  'ROUND 2 la somma delle palle colpite deve essere 15',  // message
-													  onConfirm2,              // callback to invoke with index of button pressed
-													  'Spegni',            // title
-													  'Inizia,Annulla'      // buttonLabels
-													  );
-					   
-					   
-
-		});
-		
-		
-		function onConfirm2(button) {
-			
-			if(button==1){    //If User selected No, then we just do nothing
-				
-				localStorage.setItem("sfida","0")
-				localStorage.setItem("round","2")
-				
-				$("#load").show()
-				
-				localStorage.setItem("session10","0")
-				
-				localStorage.setItem("esatte","0")
-				$("#esatte2").html("0")
-				$("#esatte3").html("0")
-				
-				$("#totale").html("0/15")
-				$("#bianca0").hide()
-				$("#bianca").hide()
-				$("#bianca1").hide()
-				$("#bianca2").hide()
-				
-				$("#allenati").hide()
-				$("#lastpunt").hide()
-				
-				var uno;
-				var due;
-				var tre;
-				var quattro;
-				var numero = 2;
-				var numero1 = 3;
-				var numero2 = 4;
-				var numero3 = 5;
-				var numero4 = 6;
-				var numero5 = 7;
-				
-				//DATA
-				var today = new Date();
-				var dd = today.getDate();
-				var mm = today.getMonth()+1;//January is 0, so always add + 1
-				
-				var ora = today.getHours()
-				if(ora<10){ora="0"+ora}
-				
-				var minuti = today.getMinutes();
-				if(minuti<10){minuti="0"+minuti}
-				
-				var secondi = today.getSeconds();
-				if(secondi<10){secondi="0"+secondi}
-				
-				
-				var yyyy = today.getFullYear();
-				if(dd<10){dd="0"+dd}
-				if(mm<10){mm="0"+mm}
-				today = dd+'/'+mm+'/'+yyyy;
-				
-				$("#stamp").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-				$("#stamp2").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-				var ora_cell = yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00";
-				
-				localStorage.setItem("ora_cell", ora_cell);
-				
-				
-				localStorage.setItem("start","0")
-				localStorage.setItem("punteggio1","0")
-				var somma=0;
-				var punto=0;
-				
-				
-				//admob.hideBanner()
-				
-				//AdMob.removeBanner();
-				
-				localStorage.setItem("esatte",0)
-				$("#esatte2").html("0")
-				$("#esatte3").html("0")
-				
-				playAudio('successSound');
-				
-				localStorage.setItem("session10","0")
-				localStorage.setItem("punteggio1","0")
-				somma=0
-				punto = 0
-				$("#somma").html("0")
-				$("#totale").html("0")
-				$("#gioco").show()
-				
-				
-				$("#going").hide()
-				
-				setTimeout(function() {
-						   
-						   playAudio('successSound2');
-						   
-						   $("#load").hide()
-						   
-						   $("#dati").show()
-						   $("#dati0").show()
-						   
-						   $("#biliardo").show();
-						   
-						   $("#somma").html("0")
-						   $("#totale").html("0")
-						   countdown1(0);
-						   
-						   }, 1000);
-				
-				localStorage.setItem("start","0")
-				
-				prendinumeri3_15(0)
-				
-			}
-			
-		}
-
-		
-		function going2(){
-			// SONO ARRIVATO QUI
-			
-			// devo correggere andando a prendere BTNSFIDA aggiungendo il Round 2
-			
-			          navigator.notification.alert(
-						'ROUND 2, la somma delle palle colpite deve essere 15',  // message
-						alertDismissed,         // callback
-						'Somma 15',            // title
-						'OK'                  // buttonName
-					  );
-			
-					   localStorage.setItem("sfida","1")
-					   localStorage.setItem("round","2")
-					   
-					   $("#load").show()
-			
-					   $("#totale").html("0/15")
-					   $("#bianca0").hide()
-					   $("#bianca").hide()
-					   $("#bianca1").hide()
-					   $("#bianca2").hide()
-					   
-					   $("#allenati").hide()
-					   
-					   var uno;
-					   var due;
-					   var tre;
-					   var quattro;
-					   var numero = 2;
-					   var numero1 = 3;
-					   var numero2 = 4;
-					   var numero3 = 5;
-					   var numero4 = 6;
-					   var numero5 = 7;
-					   
-					   //DATA
-					   var today = new Date();
-					   var dd = today.getDate();
-					   var mm = today.getMonth()+1;//January is 0, so always add + 1
-					   
-					   var ora = today.getHours()
-					   if(ora<10){ora="0"+ora}
-					   
-					   var minuti = today.getMinutes();
-					   if(minuti<10){minuti="0"+minuti}
-					   
-					   var secondi = today.getSeconds();
-					   if(secondi<10){secondi="0"+secondi}
-					   
-					   
-					   var yyyy = today.getFullYear();
-					   if(dd<10){dd="0"+dd}
-					   if(mm<10){mm="0"+mm}
-					   today = dd+'/'+mm+'/'+yyyy;
-					   
-					   $("#stamp").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-					   $("#stamp2").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-					   var ora_cell = yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00";
-					   
-					   localStorage.setItem("ora_cell", ora_cell);
-			
-					   
-					    playAudio('successSound');
-			
-						localStorage.setItem("esatte",0)
-						$("#esatte2").html("0")
-						$("#esatte3").html("0")
-			
-						var somma=0;
-
-					   $("#gioco").show()
-			
-					   $("#going").hide()
-			
-			
-					   setTimeout(function() {
-								  
-							playAudio('successSound2');
-								  
-							$("#load").hide()
-								  
-							$("#dati").show()
-							$("#dati0").show()
-								  
-							$("#biliardo").show();
-
-							countdown1(0);
-								  
-							$("#somma").html("0")
-							$("#totale").html("0")
-								  
-						}, 1000);
-					   
-					   localStorage.setItem("start","0")
-					   
-					   prendinumeri3_15(0)
-					   
-		}
-		
-		
-		$(document).on("touchstart", "#going3", function(e){
-					   
-					   navigator.notification.alert(
-													'Solo a pagamento',  // message
-													alertDismissed,         // callback
-													'Round 3',            // title
-													'OK'                  // buttonName
-													);
 		});
 		
 		

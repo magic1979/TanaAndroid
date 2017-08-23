@@ -58,7 +58,7 @@ function onDeviceReady() {
                $.each(result, function(i,item){
                       
                       if(item.Token=="1"){
-                      classifica = classifica + "<tr><td align='center' width='50'><font color='black' size='2'><b>"+ item.ora+"</b></td><td align='center' width='70'><font color='black' size='2'><b>"+item.data+"</b></font></td><td align='center' width='200'><font color='black' size='2'><b>"+ item.torneo+"</b></td></tr><tr><td align='center' width='100%' colspan='3'><font color='black' size='2'>"+item.note+"</font></td></tr>"
+                      classifica = classifica + "<tr><td align='center' width='50'><font color='black' size='2'><b>"+ item.ora+"</b></td><td align='center' width='70'><font color='black' size='2'><b>"+item.data+"</b></font></td><td align='center' width='200'><font color='red' size='2'><b>"+ item.torneo+"</b></font></td></tr><tr><td align='center' width='100%' colspan='3'><font color='black' size='2'>"+item.note+"</font></td></tr>"
                       }
                       else{
                       classifica = classifica + "<tr><td align='center' width='100%' colspan='3'><font color='black' size='1'>Nessun torneo al momento</font></td></tr>"
