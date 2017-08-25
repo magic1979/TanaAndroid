@@ -2,8 +2,8 @@
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		id        = "com.tanadelletigri"
-		versionCode="1"
-		version   = "1">
+		versionCode="2"
+		version   = "2">
 		<name>TanadelleTigri</name>
 		<description>Poker Event Tana delle Tigri, Torneo di Poker Tana delle Tigri</description>
 		<author href="http://msop.it" email="info@msop.it">
@@ -173,10 +173,6 @@
 			<uses-permission android:name="android.permission.RECORD_AUDIO" />
 			<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 			<uses-permission android:name="android.permission.RECORD_VIDEO" />
-			<uses-permission android:name="android.permission.WAKE_LOCK" />
-			<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-			<uses-permission android:name="TanadelleTigri.permission.C2D_MESSAGE" />
-			
 			<uses-feature android:name="android.hardware.camera" />  
 			<uses-feature android:name="android.hardware.camera.autofocus" />
 			
