@@ -2,18 +2,12 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     document.addEventListener("resume", onResume, false);
-	
-	/*$(function() {
-	  FastClick.attach(document.body);
-    });*/
-	
-	 FastClick.attach(document.body);
-
     
     document.ontouchmove = function(e){
         e.preventDefault();
     }
 
+	FastClick.attach(document.body);
     
     var myScroll;
     
@@ -64,21 +58,21 @@ function onDeviceReady() {
                
                $.each(result, function(i,item){
                       
-                      if(conta==2){
+					if(conta==2){
                       $('#annoclassifica').html("<font size='4'><b>" + item.mese + " " + item.anno + "</b></font>");
-                      }
+					}
                       
-                      if(item.Token=="1"){
+					if(item.Token=="1"){
                       classifica = classifica + "<li><font color='black' size='2'><b>"+ conta + ". " + item.nome+"</b> "+item.punti+"</font></li>"
-                      }
-                      else{
+					}
+					else{
                       classifica = classifica + "<li><font color='black' size='2'>Nessun gioctore in classifica</li>"
                       $("#spinner1").hide()
-                      }
+					}
                       
                       conta = conta +1
                       
-                      });
+				});
                
                
                $('#classifica').html(classifica);
@@ -133,24 +127,23 @@ function onDeviceReady() {
 function onResume() {
 	 
 	   window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  500,
+				"androiddelay"   :  100,
                 "href" : "index.html"
             });
 	 
     }
 
-// $(document).on( "vclick", "p", function() {
 
 $(document).on("touchstart", "#indietro", function(e){
 					   
 			//window.location.href = "index.html";
 			//$.mobile.changePage ($("#home"));
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  500,
+				"androiddelay"   :  100,
                 "href" : "classifica.html"
             });
 			

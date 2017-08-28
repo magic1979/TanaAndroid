@@ -47,9 +47,7 @@ var app = {
 		);
 		
 
-		
 		FastClick.attach(document.body);
-        
 
 		////////// controllo internet ///////////////
 		
@@ -58,7 +56,51 @@ var app = {
 		
 		if(connectionStatus=='online'){
             
-          //prendibannertop()
+			$("#spinner1").show()
+			
+			$.ajax({
+				   type:"GET",
+				   url:"http://msop.it/tanadelletigri/tuned.php",
+				   contentType: "application/json",
+				   //data: {Lat:3,Longi:4},
+				   timeout: 7000,
+				   jsonp: 'callback',
+				   crossDomain: true,
+				   success:function(result){
+				   
+				   
+				   $.each(result, function(i,item){
+						  
+
+					 if(item.accesso=="1"){
+						  
+						$("#menuclassifica").show()
+						$("#soon").hide()
+						$("#spinner1").hide()
+					 }
+						  
+						  
+					});
+				   
+				   $("#spinner1").hide()
+				   
+				   },
+				   error: function(){
+				   
+				   $("#spinner1").show()
+				   
+				   navigator.notification.alert(
+												'Errore di rete, riprova sotto copertura',  // message
+												alertDismissed,         // callback
+												'Errore di Rete',            // title
+												'OK'                  // buttonName
+												);
+				   
+				   },
+				   
+				   dataType:"jsonp"});
+			
+
 		
 		  var uno;
 		  var due;
@@ -111,7 +153,8 @@ var app = {
                 
 			}
 			else{
-                
+				
+				$("#spinner1").hide()
 				
 				//admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob IOS
 				//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
@@ -155,6 +198,13 @@ var app = {
 				
 				
 				////// AD MOB FINE ////
+				
+				navigator.notification.alert(
+												'Errore di rete, riprova sotto copertura',  // message
+												alertDismissed,         // callback
+												'Errore di Rete',            // title
+												'OK'                  // buttonName
+												);
 
 				
 			}
@@ -276,7 +326,7 @@ var app = {
                        
            // window.location.href = "index2live.html";
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
 				"androiddelay"   :  500,
                 "href" : "index2live.html"
@@ -289,7 +339,7 @@ var app = {
                        
            // window.location.href = "index2online.html";
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
 				"androiddelay"   :  500,
                 "href" : "index2online.html"

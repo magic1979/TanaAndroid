@@ -6,9 +6,8 @@ function onDeviceReady() {
 	document.ontouchmove = function(e){
 		e.preventDefault();
 	}
-	
-	FastClick.attach(document.body);
     
+	FastClick.attach(document.body);
     
     var myScroll;
     
@@ -29,20 +28,38 @@ function onDeviceReady() {
                            }
                            
                            });
+	
+	
+	var connectionStatus = false;
+	connectionStatus = navigator.onLine ? 'online' : 'offline';
+	
+	if(connectionStatus=='online'){
+		
     
-    
-    setTimeout (function(){
+          setTimeout (function(){
                 
-                myScroll.refresh();
-                data();
+			 myScroll.refresh();
+			 data();
                 
-                }, 200);
+		   }, 200);
+		
+	}
+	else{
+		setTimeout (function(){
+					
+					myScroll.refresh();
+					//data();
+					
+		   }, 200);
+	}
 	
 	
 
     function data(){
         var classifica = "<tr><td align='center' width='100%' colspan='3'><br></td></tr>";
-        var conta = 1
+        var conta = "1";
+		var linko = "http://msop.it/waddall/splash.html";
+		localStorage.setItem("pagina","http://msop.it/waddall/splash.html")
         
         $("#spinner1").show()
         
@@ -58,24 +75,43 @@ function onDeviceReady() {
                
                
                $.each(result, function(i,item){
-                      
-                      if(item.Token=="1"){
-                      classifica = classifica + "<tr><td align='center' width='50'><font color='black' size='2'><b>"+ item.ora+"</b></td><td align='center' width='70'><font color='black' size='2'><b>"+item.data+"</b></font></td><td align='center' width='200'><font color='red' size='2'><b>"+ item.torneo+"</b></font></td></tr><tr><td align='center' width='100%' colspan='3'><font color='black' size='2'>"+item.note+"</font></font></td></tr>"
+					  
+					  
+					if(item.Token=="1"){
+					  
+					  if(conta=="1"){
+					  
+					   if(item.cambioimg=="1"){
+					  
+					      $("#tuttigiu").html("<img id='bennergiu' src='http://msop.it/tanadelletigri/img/"+item.imgnuova+"' width='320'>")
+					  
+					      localStorage.setItem("pagina",item.linko)
+					   }
+					  
+					  }
+					  
+					  classifica = classifica + "<tr><td align='center' width='50'><font color='black' size='2'><b>"+ item.ora+"</b></td><td align='center' width='70'><font color='black' size='2'><b>"+item.data+"</b></font></td><td align='center' width='200'><font color='black' size='2'><b>"+ item.torneo+"</b></td></tr><tr><td align='center' width='100%' colspan='3'><font color='black' size='2'>"+item.note+"</font></td></tr>"
                       }
                       else{
-                      classifica = classifica + "<tr><td align='center' width='100%' colspan='3'><font color='black' size='1'>Nessun torneo al momento</font></td></tr>"
-                      $("#spinner1").hide()
+						classifica = classifica + "<tr><td align='center' width='100%' colspan='3'><font color='black' size='1'>Nessun torneo al momento</font></td></tr>"
+						$("#spinner1").hide()
                       }
                       
                       conta = conta +1
                       
-                      });
+				});
                
                
                $('#classifica').html(classifica);
-               //$('#classifica').listview('refresh');
-               
-               
+			   
+			   
+			    $(document).on("touchstart", "#bennerlink", function(e){
+							   
+					var ref = window.open(localStorage.getItem("pagina"), '_system', 'location=no');
+							  
+				});
+			   
+			   
                $("#spinner1").hide()
                
                setTimeout (function(){
@@ -119,9 +155,9 @@ function onDeviceReady() {
 function onResume() {
 	 
 	   window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  500,
+				"androiddelay"   :  100,
                 "href" : "index.html"
             });
 	 
@@ -134,9 +170,9 @@ $(document).on("touchstart", "#indietro", function(e){
 			//window.location.href = "index.html";
 			//$.mobile.changePage ($("#home"));
 			window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
+                "duration"       :  1000, // in milliseconds (ms), default 400
 				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  500,
+				"androiddelay"   :  100,
                 "href" : "satelliti.html"
             });
 			

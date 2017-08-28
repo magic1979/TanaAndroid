@@ -310,96 +310,55 @@ var app = {
 			else{
                 
 				
-				//admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob IOS
-				//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
 				
-				//// AD MOB ////
-				
-				
-				//// ANDROID //////
-				
-				/*var admobid = {};
-				 
-				 if( /(android)/i.test(navigator.userAgent) ) {
-				 admobid = {
-				 banner: 'ca-app-pub-5263503085775846/1999366017',
-				 interstitial: 'ca-app-pub-5263503085775846~9522632812'
-				 };
-				 } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
-				 admobid = {
-				 banner: 'ca-app-pub-5263503085775846/1999366017',
-				 interstitial: 'ca-app-pub-5263503085775846~9522632812'
-				 };
-				 } else {
-				 admobid = {
-				 banner: 'ca-app-pub-5263503085775846/1999366017',
-				 interstitial: 'ca-app-pub-5263503085775846~9522632812'
-				 };
-				 }
-				 
-				 if(AdMob) AdMob.createBanner( {
-				 adId:admobid.banner,
-				 position:AdMob.AD_POSITION.BOTTOM_CENTER,
-				 autoShow:true} );
-				 
-				 
-				 
-				 if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
-				 
-				 if(AdMob) AdMob.showInterstitial();*/
-				
-				///// FINE /////
-				
-				
-				////// AD MOB FINE ////
 				
 				var thisAd = 0;
 				
-				initBannerLink()
+				//initBannerLink()
 				
 				
-				function initBannerLink() {
-					if (document.getElementById("adBanner").parentNode.tagName == "A") {
-						document.getElementById("adBanner").parentNode.onclick = newLocation;
-					}
-					
-					rotate();
-				}
-				
-				
-				
-				function newLocation() {
-					var adURL = new Array("negrino.com","sun.com","microsoft.com");
-					
-					//document.location.href = "http://www." + adURL[thisAd];
-					
-					var ref = window.open('http://www.'+adURL[thisAd]+'', '_system', 'location=no');
-					
-					return false;
-				}
-				
-				
-				
-				function rotate() {
-					var adImages = new Array("images/banner1.jpg","images/banner2.png","images/banner3.png");
-					
-					thisAd++;
-					if (thisAd == adImages.length) {
-						thisAd = 0;
-					}
-					
-					document.getElementById("adBanner").src = adImages[thisAd];
-					
-			
-					
-					setTimeout (function(){
-								
-                        rotate();
-								
-					}, 3000);
-					
-					
-				}
+				 function initBannerLink() {
+                    if (document.getElementById("adBanner").parentNode.tagName == "A") {
+                        document.getElementById("adBanner").parentNode.onclick = newLocation;
+                    }
+                    
+                    rotate();
+                }
+                
+                
+                
+                function newLocation() {
+                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org");
+                    
+                    //document.location.href = "http://www." + adURL[thisAd];
+                    
+                    var ref = window.open('http://www.'+adURL[thisAd]+'', '_system', 'location=no');
+                    
+                    return false;
+                }
+                
+                
+                
+                function rotate() {
+                    var adImages = new Array("img/bannermondo.png","img/bannerpiw.png");
+                    
+                    thisAd++;
+                    if (thisAd == adImages.length) {
+                        thisAd = 0;
+                    }
+                    
+                    document.getElementById("adBanner").src = adImages[thisAd];
+                    
+                    
+                    
+                    setTimeout (function(){
+                                
+                                rotate();
+                                
+                                }, 4000);
+                    
+                    
+                }
 				
 			}
 			
@@ -563,16 +522,60 @@ var app = {
         
         
         $(document).on("touchstart", "#classifica", function(e){
-                       
-            //window.location.href = "#home3";
-			window.plugins.nativepagetransitions.fade({
-                "duration"       :  700, // in milliseconds (ms), default 400
-				"iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
-				"androiddelay"   :  500,
-                "href" : "#home3"
-            });
-			
-                       
+					   
+					   
+					   $("#spinner1").show()
+					   
+					   $.ajax({
+							  type:"GET",
+							  url:"http://msop.it/tanadelletigri/tuned.php",
+							  contentType: "application/json",
+							  //data: {Lat:3,Longi:4},
+							  timeout: 7000,
+							  jsonp: 'callback',
+							  crossDomain: true,
+							  success:function(result){
+							  
+							  
+							  $.each(result, function(i,item){
+									 
+									 //window.location.href = "#home3";
+									 window.plugins.nativepagetransitions.fade({
+																			   "duration"       :  700, // in milliseconds (ms), default 400
+																			   "iosdelay"       :   50, // ms to wait for the iOS webview to update before animation kicks in, default 60
+																			   "androiddelay"   :  500,
+																			   "href" : "#home3"
+																			   });
+									 
+								  if(item.accesso=="1"){
+									 
+									 $("#menuclassifica").show()
+									 $("#soon").hide()
+									 $("#spinner1").hide()
+								  }
+									 
+									 
+							   });
+							  
+							  $("#spinner1").hide()
+							  
+							  },
+							  error: function(){
+							  
+							   $("#spinner1").show()
+							  
+							  navigator.notification.alert(
+														   'Errore di rete, riprova sotto copertura',  // message
+														   alertDismissed,         // callback
+														   'Errore di Rete',            // title
+														   'OK'                  // buttonName
+														   );
+							  
+							  },
+							  
+							  dataType:"jsonp"});
+					   
+					   
         });
         
         $(document).on("touchstart", "#satelliti", function(e){
@@ -944,13 +947,11 @@ var app = {
 
 
 
-
 function gpsonError(){
 	
 	//alert()
 
 }
-
 
 
 function onPause() {
@@ -960,65 +961,12 @@ function onPause() {
 }
 
 
-
 function alertDismissed() {
 	
 	//var myTimer = setInterval(onPause3, 2000);
 	
 }
 
-
-
-function onPause3() {
-	
-	var today = new Date();
-	var dd = today.getDate();
-	var mm = today.getMonth()+1;//January is 0, so always add + 1
-	
-	var ora = today.getHours()
-	if(ora<10){ora="0"+ora}
-	
-	var minuti = today.getMinutes();
-	if(minuti<10){minuti="0"+minuti}
-	
-	var secondi = today.getSeconds();
-	if(secondi<10){secondi="0"+secondi}
-	
-	//self.document.formia.ora.value = ora + ":" + minuti
-	
-	var yyyy = today.getFullYear();
-	if(dd<10){dd="0"+dd}
-	if(mm<10){mm="0"+mm}
-	today = dd+'/'+mm+'/'+yyyy;
-	
-	$("#distanza3").html("<span style = 'font-size: 18px;'>"+ ora +","+ minuti +","+ secondi +"</span>");
-	
-	//if(secondi==10){
-		//clearInterval(myTimer);
-	//}
-	
-	$.ajax({
-		   type:"GET",
-		   url:"http://gtechplay.com/mycollection/www/Posizione.asp",
-		   contentType: "application/json",
-		   data: {Lat:3,Longi:4},
-		   timeout: 7000,
-		   jsonp: 'callback',
-		   crossDomain: true,
-		   success:function(result){
-		   
-		   //$.each(result, function(i,item){
-		   //});
-		   
-		   
-		   },
-		   error: function(){
-		   
-		   
-		   },
-		   dataType:"jsonp"});
-	
-}
 
 
 function playAudio(id) {
