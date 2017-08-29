@@ -9,7 +9,7 @@
 		<author href="http://msop.it" email="info@msop.it">
 			Associzione Game Answer
 		</author>
-		<preference name="phonegap-version" value="cli-7.0.1" />
+		<preference name="phonegap-version" value="cli-6.5.0" />
 		<preference name="orientation" value="portrait" />
 		<preference name="android-windowSoftInputMode" value="adjustResize" />
 		<preference name="fullscreen" value="false" />
@@ -127,10 +127,6 @@
 		<splash src="XHDPI.png" platform="android" density="port-xhdpi" />
 		<splash src="XXHDPI.png" platform="android" density="port-xxhdpi" />
 		<splash src="XXXHDPI.png" platform="android" density="port-xxxhdpi" />
-		
-		<splash src="XXHDPI.png" platform="android" density="fr-xhdpi" />
-		<splash src="XXHDPI.png" platform="android" density="port-xxhdpi" />
-		<splash src="XXHDPI.png" platform="android" density="land-xxhdpi" />
 		
 		<access origin="*" />
 		<access origin="content:///*" />
