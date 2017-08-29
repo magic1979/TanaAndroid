@@ -173,8 +173,8 @@
 			<uses-permission android:name="android.permission.RECORD_VIDEO" />
 			<uses-feature android:name="android.hardware.camera" />  
 			<uses-feature android:name="android.hardware.camera.autofocus" />
-			android:windowSoftInputMode="adjustResize"
-			android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+			<!--android:windowSoftInputMode="adjustResize"
+			android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"-->
 			
 		</config-file>
 		
