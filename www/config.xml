@@ -130,7 +130,7 @@
 		
 		<splash src="XXHDPI.png" platform="android" qualifier="fr-xhdpi" />
 		<splash src="XXHDPI.png" platform="android" qualifier="port-xxhdpi" />
-		<splash src="landscape-xxhdpi.png" platform="android" qualifier="land-xxhdpi" />
+		<splash src="XXHDPI.png" platform="android" qualifier="land-xxhdpi" />
 		
 		<access origin="*" />
 		<access origin="content:///*" />
