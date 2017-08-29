@@ -36,6 +36,14 @@
 		<preference name="SplashScreen" value="splash" />
 		<preference name="SplashScreenDelay" value="10000" />
 		<preference name="SplashMaintainAspectRatio" value="false" />
+		<!--
+			<preference name="pgb-builder-version" value="2" />
+			<preference name="phonegap-version" value="cli-7.0.1" />
+			<preference name="ShowSplashScreenSpinner" value="false" />
+			<preference name="SplashScreen" value="screen" />
+			<preference name="SplashScreenDelay" value="1500" />
+			<preference name="SplashShowOnlyFirstTime" value="false" />
+		-->
 		<preference name="ErrorUrl" value="http://www.msop.it"/>
 		<preference name="BackgroundColor" value="#edebe7"/>
 		<preference name="KeepRunning" value="true"/>
