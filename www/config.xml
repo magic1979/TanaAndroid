@@ -102,35 +102,36 @@
 		<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 		<plugin name="com.telerik.plugins.nativepagetransitions" source="npm" />
 		
-		<icon src="res/icon/ios/icon-57.png" gap:platform="ios" width="57" height="57" />
-		<icon src="res/icon/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
-		<icon src="res/icon/ios/icon-57-2x.png" gap:platform="ios" width="114" height="114" />
-		<icon src="res/icon/ios/icon-72-2x.png" gap:platform="ios" width="144" height="144" />
+		
 		<icon src="36x36.png" gap:platform="android" gap:density="ldpi" />
 		<icon src="48x48.png" gap:platform="android" gap:density="mdpi" />
 		<icon src="72x72.png" gap:platform="android" gap:density="hdpi" />
 		<icon src="96x96.png" gap:platform="android" gap:density="xhdpi" />
 		<icon src="144x144.png" gap:platform="android" gap:density="xxhdpi" />
 		<icon src="192x192.png" gap:platform="android" gap:density="xxxhdpi" />
-		<icon src="res/icon/windows-phone/icon-48.png" gap:platform="winphone" />
-		<icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone" gap:role="background" />
-		<icon src="res/icon/blackberry/icon-80.png" gap:platform="blackberry" />
-		<icon src="res/icon/webos/icon-64.png" gap:platform="webos" />
+		
 		<icon src="64x64.png" />
-		<gap:splash src="res/screen/ios/screen-iphone-portrait.png" gap:platform="ios" width="320" height="480" />
-		<gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios" width="640" height="960" />
-		<gap:splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios" width="640" height="1136" />
-		<gap:splash src="res/screen/ios/screen-ipad-portrait.png" gap:platform="ios" width="768" height="1024 " />
-		<gap:splash src="res/screen/ios/screen-ipad-landscape.png" gap:platform="ios" width="1024" height="768" />
-		<gap:splash src="LDPI.png" gap:platform="android" gap:density="ldpi" />
+		
+		<!--<gap:splash src="LDPI.png" gap:platform="android" gap:density="ldpi" />
 		<gap:splash src="MDPI.png" gap:platform="android" gap:density="mdpi" />
 		<gap:splash src="HDPI.png" gap:platform="android" gap:density="hdpi" />
 		<gap:splash src="XHDPI.png" gap:platform="android" gap:density="xhdpi" />
 		<gap:splash src="XXHDPI.png" gap:platform="android" gap:density="xxhdpi" />
-		<gap:splash src="XXXHDPI.png" gap:platform="android" gap:density="xxxhdpi" />
-		<gap:splash src="res/screen/blackberry/screen-225.png" gap:platform="blackberry" />
-		<gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
-		<gap:splash src="splash.png" />
+		<gap:splash src="XXXHDPI.png" gap:platform="android" gap:density="xxxhdpi" />-->
+		
+		<splash src="splash.png" />
+		
+		<splash src="LDPI.png" platform="android" qualifier="ldpi" />
+		<splash src="MDPI.png" platform="android" qualifier="mdpi" />
+		<splash src="HDPI.png" platform="android" qualifier="hdpi" />
+		<splash src="XHDPI.png" platform="android" qualifier="xhdpi" />
+		<splash src="XXHDPI.png" platform="android" qualifier="xxhdpi" />
+		<splash src="XXXHDPI.png" platform="android" qualifier="xxxhdpi" />
+		
+		<splash src="XXHDPI.png" platform="android" qualifier="fr-xhdpi" />
+		<splash src="XXHDPI.png" platform="android" qualifier="port-xxhdpi" />
+		<splash src="landscape-xxhdpi.png" platform="android" qualifier="land-xxhdpi" />
+		
 		<access origin="*" />
 		<access origin="content:///*" />
 		<access origin="http://google.com" subdomains="true"  />
@@ -153,13 +154,12 @@
 		<allow-intent href="mailto:*" />
 		<allow-intent href="geo:*" />
 		<platform name="android">
-			<allow-intent href="market:*" />
+		<allow-intent href="market:*" />
 		</platform>
 		
-		<gap:config-file platform="android" parent="/manifest" mode="add" xmlns:android="http://schemas.android.com/apk/res/android">
 		
-			android:windowSoftInputMode="adjustResize"
-			android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+		<config-file platform="android" parent="/manifest" mode="add" xmlns:android="http://schemas.android.com/apk/res/android">
+		
 			<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     		<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
@@ -173,7 +173,9 @@
 			<uses-permission android:name="android.permission.RECORD_VIDEO" />
 			<uses-feature android:name="android.hardware.camera" />  
 			<uses-feature android:name="android.hardware.camera.autofocus" />
+			android:windowSoftInputMode="adjustResize"
+			android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
 			
-		</gap:config-file>
+		</config-file>
 		
 	</widget>
