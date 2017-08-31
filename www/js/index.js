@@ -38,6 +38,21 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 		//document.addEventListener("pause", onPause, false);
+		document.addEventListener("resume", onResume, false);
+		
+		if(localStorage.getItem("spinno")!="1"){
+			setTimeout (function(){
+									
+				$("#spinnero").hide()
+				localStorage.setItem("spinno", "1");
+									
+			}, 4000);
+		}
+		else{
+			
+			$("#spinnero").hide()
+			
+		}
 		
 
 		document.addEventListener("touchmove",function(e) {
@@ -47,7 +62,7 @@ var app = {
 		);
 		
 
-		
+
 		if (localStorage.getItem("nomefoto") === null || localStorage.getItem("nomefoto")=="null" || typeof(localStorage.getItem("nomefoto")) == 'undefined' || localStorage.getItem("nomefoto")==0 || localStorage.getItem("nomefoto")=="") {
 			
 			localStorage.setItem("foto","default.png")
@@ -169,8 +184,6 @@ var app = {
 			///////// PUSH NUOVE ///////
 	
 
-	
-	
 			function testa (testo) {
 				
 				
@@ -309,9 +322,7 @@ var app = {
 			}
 			else{
                 
-				
-				
-				
+
 				var thisAd = 0;
 				
 				initBannerLink()
@@ -525,9 +536,7 @@ var app = {
         }
         
         
-        
-        
-		
+
 		$(document).on("touchstart", "#condividi", function(e){
 					   
 					   
@@ -579,9 +588,7 @@ var app = {
 		});
 		
 		
-		
-		
-		
+
 		
 		$(document).on("touchstart", "#indietro", function(e){
 					   
@@ -1065,6 +1072,17 @@ function onPause() {
 	
 	//var myTimer = setInterval(onPause3, 2000);
 	
+}
+
+function onResume() {
+	 
+  setTimeout (function(){
+									
+	$("#spinnero").hide()
+	localStorage.setItem("spinno", "1");
+									
+  }, 4000);	 
+	 
 }
 
 
