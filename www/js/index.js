@@ -38,7 +38,8 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 		//document.addEventListener("pause", onPause, false);
-		document.addEventListener("resume", onResume, false);
+		//document.addEventListener("resume", onResume, false);
+		
 		
 		if(localStorage.getItem("spinno")!="1"){
 			$("#spinnero2").show()
@@ -53,6 +54,7 @@ var app = {
 		}
 		else{
 			
+			$("#header").show()
 			$("#spinnero2").hide()
 			
 		}
@@ -1073,7 +1075,16 @@ function gpsonError(){
 
 function onPause() {
 	
-	//var myTimer = setInterval(onPause3, 2000);
+  $("#spinnero2").show()
+  $("#header").hide()
+	 
+  setTimeout (function(){
+									
+	$("#spinnero2").hide()
+	localStorage.setItem("spinno", "1");
+	$("#header").show()
+									
+  }, 4000);
 	
 }
 
