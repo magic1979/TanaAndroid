@@ -304,7 +304,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("img/bannermondo.png","img/bannerpiw.png");
+                    var adImages = new Array("bannermondo.png","bannerpiw.png");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
@@ -356,7 +356,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("img/bannermondo.png","img/bannerpiw.png");
+                    var adImages = new Array("bannermondo.png","bannerpiw.png");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
@@ -412,7 +412,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("img/bannermondo.png","img/bannerpiw.png");
+                    var adImages = new Array("bannermondo.png","bannerpiw.png");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
@@ -464,7 +464,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("img/bannermondo.png","img/bannerpiw.png");
+                    var adImages = new Array("bannermondo.png","bannerpiw.png");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
