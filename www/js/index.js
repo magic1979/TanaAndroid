@@ -41,7 +41,7 @@ var app = {
 		//document.addEventListener("resume", onResume, false);
 		
 		
-		if(localStorage.getItem("spinno")!="1"){
+		/*if(localStorage.getItem("spinno")!="1"){
 			$("#spinnero2").show()
 			
 			setTimeout (function(){
@@ -57,7 +57,7 @@ var app = {
 			$("#header").show()
 			$("#spinnero2").hide()
 			
-		}
+		}*/
 		
 
 		document.addEventListener("touchmove",function(e) {
