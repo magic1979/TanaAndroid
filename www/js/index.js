@@ -46,11 +46,11 @@ var app = {
 				$("#spinnero2").hide()
 				localStorage.setItem("spinno", "1");
 									
-			}, 4000);
+			}, 3000);
 		}
 		else{
 			
-			$("#spinnero").hide()
+			$("#spinnero2").hide()
 			
 		}
 		

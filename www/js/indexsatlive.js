@@ -58,8 +58,8 @@ function onDeviceReady() {
     function data(){
         var classifica = "<tr><td align='center' width='100%' colspan='3'><br></td></tr>";
         var conta = "1";
-		var linko = "http://msop.it/waddall/splash.html";
-		localStorage.setItem("pagina","http://msop.it/waddall/splash.html")
+		var linko = "https://www.facebook.com/Poker-Room-Latina-1399849933643361/?ref=aymt_homepage_panel";
+		localStorage.setItem("pagina","https://www.facebook.com/Poker-Room-Latina-1399849933643361/?ref=aymt_homepage_panel")
         
         $("#spinner1").show()
         
