@@ -83,7 +83,7 @@ function onDeviceReady() {
 					  
 					   if(item.cambioimg=="1"){
 					  
-					      $("#tuttigiu").html("<img id='bennergiu' src='http://msop.it/tanadelletigri/img/"+item.imgnuova+"' width='320'>")
+					      $("#tuttigiu").html("<img id='bennergiu' src='http://msop.it/tanadelletigri/img/"+item.imgnuova+"' width='98%'>")
 					  
 					      localStorage.setItem("pagina",item.linko)
 					   }

@@ -171,45 +171,45 @@ var app = {
 
 	
 	
-	function testa (testo) {
-		
-		
-		setTimeout (function(){
-					
-		
-		$.ajax({
-			   type:"GET",
-			   url:"http://www.msop.it/tanadelletigri/Check_RegToken.asp",
-			   data: {device:testo,platform:"android"},
-			   contentType: "application/json",
-			   json: 'callback',
-			   timeout: 7000,
-			   crossDomain: true,
-			   success:function(result){
-			   
-			   $.each(result, function(i,item){
-			   
-			     setTimeout (function(){
-					localStorage.setItem("Token", testo);
-					//alert(testo);
+			function testa (testo) {
+				
+				
+				setTimeout (function(){
+							
+				
+				$.ajax({
+					   type:"GET",
+					   url:"http://www.msop.it/tanadelletigri/Check_RegToken.asp",
+					   data: {device:testo,platform:"android"},
+					   contentType: "application/json",
+					   json: 'callback',
+					   timeout: 7000,
+					   crossDomain: true,
+					   success:function(result){
+					   
+					   $.each(result, function(i,item){
+					   
+						 setTimeout (function(){
+							localStorage.setItem("Token", testo);
+							//alert(testo);
+						}, 500);
+					   
+					   });
+					   
+					   },
+					   error: function(){
+					   
+						 //alert("No")
+					   
+					   },
+					   dataType:"json"});
+							
 				}, 500);
-			   
-			   });
-			   
-			   },
-			   error: function(){
-			   
-				 //alert("No")
-			   
-			   },
-			   dataType:"json"});
-					
-		}, 500);
-		
-		
-	}
+				
+				
+			}
 	
-	///// FINE PUSH NOTIFICATION ///////////
+		   ///// FINE PUSH NOTIFICATION ///////////
 		
 		  var uno;
 		  var due;
@@ -314,7 +314,7 @@ var app = {
 				
 				var thisAd = 0;
 				
-				//initBannerLink()
+				initBannerLink()
 				
 				
 				 function initBannerLink() {
@@ -362,6 +362,113 @@ var app = {
 				
 			}
 			
+			
+		}
+		else{
+			
+			if (localStorage.getItem("email") === null || localStorage.getItem("email")=="null" || typeof(localStorage.getItem("email")) == 'undefined' || localStorage.getItem("email")==0 || localStorage.getItem("email")=="") {
+				
+                var thisAd = 0;
+                
+                initBannerLink()
+                
+                
+                function initBannerLink() {
+                    if (document.getElementById("adBanner").parentNode.tagName == "A") {
+                        document.getElementById("adBanner").parentNode.onclick = newLocation;
+                    }
+                    
+                    rotate();
+                }
+                
+                
+                
+                function newLocation() {
+                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org");
+                    
+                    //document.location.href = "http://www." + adURL[thisAd];
+                    
+                    var ref = window.open('http://www.'+adURL[thisAd]+'', '_system', 'location=no');
+                    
+                    return false;
+                }
+                
+                
+                
+                function rotate() {
+                    var adImages = new Array("img/bannermondo.png","img/bannerpiw.png");
+                    
+                    thisAd++;
+                    if (thisAd == adImages.length) {
+                        thisAd = 0;
+                    }
+                    
+                    document.getElementById("adBanner").src = adImages[thisAd];
+                    
+                    
+                    
+                    setTimeout (function(){
+                                
+                                rotate();
+                                
+                                }, 4000);
+                    
+                    
+                }
+
+			}
+			else{
+                
+
+				var thisAd = 0;
+				
+				initBannerLink()
+				
+				
+				 function initBannerLink() {
+                    if (document.getElementById("adBanner").parentNode.tagName == "A") {
+                        document.getElementById("adBanner").parentNode.onclick = newLocation;
+                    }
+                    
+                    rotate();
+                }
+                
+                
+                
+                function newLocation() {
+                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org");
+                    
+                    //document.location.href = "http://www." + adURL[thisAd];
+                    
+                    var ref = window.open('http://www.'+adURL[thisAd]+'', '_system', 'location=no');
+                    
+                    return false;
+                }
+                
+                
+                
+                function rotate() {
+                    var adImages = new Array("img/bannermondo.png","img/bannerpiw.png");
+                    
+                    thisAd++;
+                    if (thisAd == adImages.length) {
+                        thisAd = 0;
+                    }
+                    
+                    document.getElementById("adBanner").src = adImages[thisAd];
+                    
+                    
+                    
+                    setTimeout (function(){
+                                
+                                rotate();
+                                
+                                }, 4000);
+                    
+                    
+                }
+				
+			}
 			
 		}
 		
@@ -989,10 +1096,11 @@ function playAudio(id) {
 }
 
 
-$(document).on("tap", "#mandaemail", function(e){
+$(document).on("tap", "#logoanswer", function(e){
 			   
-	window.plugin.email.open({
-		to:      "eventipoker@gmail.com",
+	//window.plugin.email.open({
+	cordova.plugins.email.open({
+		to:      "associazione.gameanswer@gmail.com",
 		subject: "Contattaci",
 		body:    "Richiedi informazioni",
 		isHtml:  true
