@@ -41,12 +41,15 @@ var app = {
 		document.addEventListener("resume", onResume, false);
 		
 		if(localStorage.getItem("spinno")!="1"){
+			$("#spinnero2").show()
+			
 			setTimeout (function(){
 									
 				$("#spinnero2").hide()
 				localStorage.setItem("spinno", "1");
+				$("#header").show()
 									
-			}, 3000);
+			}, 4000);
 		}
 		else{
 			
@@ -1075,11 +1078,14 @@ function onPause() {
 }
 
 function onResume() {
+  $("#spinnero2").show()
+  $("#header").hide()
 	 
   setTimeout (function(){
 									
 	$("#spinnero2").hide()
 	localStorage.setItem("spinno", "1");
+	$("#header").show()
 									
   }, 4000);	 
 	 
