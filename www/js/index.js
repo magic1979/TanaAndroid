@@ -43,7 +43,7 @@ var app = {
 		if(localStorage.getItem("spinno")!="1"){
 			setTimeout (function(){
 									
-				$("#spinnero").hide()
+				$("#spinnero2").hide()
 				localStorage.setItem("spinno", "1");
 									
 			}, 4000);
@@ -1078,7 +1078,7 @@ function onResume() {
 	 
   setTimeout (function(){
 									
-	$("#spinnero").hide()
+	$("#spinnero2").hide()
 	localStorage.setItem("spinno", "1");
 									
   }, 4000);	 
