@@ -186,7 +186,7 @@ var app = {
 			}
 			
 			
-			///////// PUSH NUOVE ///////
+			///////// PUSH NUOVE /////////
 	
 
 			function testa (testo) {
