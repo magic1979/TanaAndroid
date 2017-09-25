@@ -294,6 +294,13 @@ var app = {
             window.location.href = "index2live.html";
                        
         });
+		
+		
+		$(document).on("touchstart", "#goperla", function(e){
+					   
+		   var ref = window.open('http://www.thecasinoperla.com/index.php?id=pokerroom_perla&L=158?utm_source=gameanswer&utm_medium=banner&utm_campaign=Poker%20room%20Perla&utm_content=ITA', '_system', 'location=no');
+					   
+	   });
         
         
         $(document).on("touchstart", "#online", function(e){

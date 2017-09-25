@@ -292,7 +292,7 @@ var app = {
                 
                 
                 function newLocation() {
-                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org");
+                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org","thecasinoperla.com/index.php?id=pokerroom_perla&L=158?utm_source=gameanswer&utm_medium=banner&utm_campaign=Poker%20room%20Perla&utm_content=ITA");
                     
                     //document.location.href = "http://www." + adURL[thisAd];
                     
@@ -304,7 +304,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("bannermondo.png","bannerpiw.png");
+                    var adImages = new Array("bannermondo.png","bannerpiw.png","bannerperla.jpg");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
@@ -344,7 +344,7 @@ var app = {
                 
                 
                 function newLocation() {
-                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org");
+                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org","thecasinoperla.com/index.php?id=pokerroom_perla&L=158?utm_source=gameanswer&utm_medium=banner&utm_campaign=Poker%20room%20Perla&utm_content=ITA");
                     
                     //document.location.href = "http://www." + adURL[thisAd];
                     
@@ -356,7 +356,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("bannermondo.png","bannerpiw.png");
+                    var adImages = new Array("bannermondo.png","bannerpiw.png","bannerperla.jpg");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
@@ -578,6 +578,18 @@ var app = {
                        
            var ref = window.open('http://www.cdsevents.it', '_system', 'location=no');
          });
+		 
+		 $(document).on("touchstart", "#gofurie", function(e){
+					   
+			var ref = window.open('https://www.facebook.com/groups/419856478094424/', '_system', 'location=no');
+					   
+        });
+		
+		$(document).on("touchstart", "#goperla", function(e){
+					   
+		   var ref = window.open('http://www.thecasinoperla.com/index.php?id=pokerroom_perla&L=158?utm_source=gameanswer&utm_medium=banner&utm_campaign=Poker%20room%20Perla&utm_content=ITA', '_system', 'location=no');
+					   
+	   });
 		
 		
 		
@@ -666,7 +678,7 @@ var app = {
 																			   "href" : "#home3"
 																			   });
 									 
-								  if(item.accesso=="1"){
+								  if(item.accesso=="0"){
 									 
 									 $("#menuclassifica").show()
 									 $("#soon").hide()

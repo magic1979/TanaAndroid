@@ -1262,6 +1262,8 @@
 
 </div>
 
+<img id="goblog" src="img/bannerblog.jpg" width="100" class="banner">
+
 <script>
 
     function onLoad() {
@@ -1304,6 +1306,12 @@
             }
                    
     });
+	
+		$(document).on("touchstart", "#goblog", function(e){
+				   
+		   var ref = window.open('http://pokeritaliaweb.org', '_system', 'location=no');
+		   
+	   });
                    
                    
     $(document).on("touchend", "#livelli", function(e){
