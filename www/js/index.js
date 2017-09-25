@@ -304,7 +304,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("bannermondo.png","bannerpiw.png","bannerperla.jpg");
+                    var adImages = new Array("bannermondo.png","bannerpiw.jpg","bannerperla.jpg");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
@@ -356,7 +356,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("bannermondo.png","bannerpiw.png","bannerperla.jpg");
+                    var adImages = new Array("bannermondo.png","bannerpiw.jpg","bannerperla.jpg");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
