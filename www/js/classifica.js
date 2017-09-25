@@ -72,7 +72,7 @@ var app = {
 				   $.each(result, function(i,item){
 						  
 
-					 if(item.accesso=="0"){
+					 if(item.accesso=="1"){
 						  
 						$("#menuclassifica").show()
 						$("#soon").hide()
