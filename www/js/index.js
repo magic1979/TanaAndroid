@@ -572,6 +572,23 @@ var app = {
             var ref = window.open('https://www.facebook.com/groups/tanadelletigripoker/', '_system', 'location=no');
                        
         });
+		
+		$(document).on("touchstart", "#bannerlotto", function(e){
+                       
+            var ref = window.open('https://m.lottomatica.it/msite/index.html#/public/tana-delle-tigri', '_system', 'location=no');
+                       
+        });
+		
+		$(document).on("touchstart", "#gofacebooklotto", function(e){
+                       
+            var ref = window.open('https://www.facebook.com/Lottomatica/', '_system', 'location=no');
+                       
+        });
+		
+		$(document).on("touchstart", "#goinstalotto", function(e){
+                       
+           var ref = window.open('https://www.facebook.com/Lottomatica/', '_system', 'location=no');
+         });
         
         
         $(document).on("touchstart", "#goinsta", function(e){
@@ -887,6 +904,48 @@ var app = {
                        $.ajax({
                               type:"GET",
                               url:"http://msop.it/tanadelletigri/regolamento.php",
+                              contentType: "application/json",
+                              //data: {Lat:3,Longi:4},
+                              timeout: 7000,
+                              jsonp: 'callback',
+                              crossDomain: true,
+                              success:function(result){
+                              
+                              //alert("2")
+                              
+                              $.each(result, function(i,item){
+                                     
+                                     var win = window.open( item.tophome, "_system", "location=yes" );
+                                     
+                                     });
+                              
+                              $("#spinner1").hide()
+                              
+                              },
+                              error: function(){
+                              
+                              
+                              navigator.notification.alert(
+                                                           'Errore di rete, riprova sotto copertura',  // message
+                                                           alertDismissed,         // callback
+                                                           'Errore di Rete',            // title
+                                                           'OK'                  // buttonName
+                                                           );
+                              
+                              },
+                              
+                              dataType:"jsonp"});
+                       
+                       });
+					   
+					   $(document).on("touchstart", "#regolamentoonline", function(e){
+                       
+                       
+                       $("#spinner1").show()
+                       
+                       $.ajax({
+                              type:"GET",
+                              url:"http://msop.it/tanadelletigri/regolamentoonline.php",
                               contentType: "application/json",
                               //data: {Lat:3,Longi:4},
                               timeout: 7000,
