@@ -498,6 +498,50 @@ var app = {
                               dataType:"jsonp"});
                        
                        });
+					   
+					   $(document).on("touchstart", "#regolamentoonline", function(e){
+                       
+                       
+                       $("#spinner1").show()
+                       
+                       $.ajax({
+                              type:"GET",
+                              url:"http://msop.it/tanadelletigri/regolamentoonline.php",
+                              contentType: "application/json",
+                              //data: {Lat:3,Longi:4},
+                              timeout: 7000,
+                              jsonp: 'callback',
+                              crossDomain: true,
+                              success:function(result){
+                              
+                              //alert("2")
+                              
+                              $.each(result, function(i,item){
+                                     
+                                     var win = window.open( item.tophome, "_system", "location=yes" );
+                                     
+                                     });
+                              
+                              $("#spinner1").hide()
+                              
+                              },
+                              error: function(){
+                              
+                              
+                              navigator.notification.alert(
+                                                           'Errore di rete, riprova sotto copertura',  // message
+                                                           alertDismissed,         // callback
+                                                           'Errore di Rete',            // title
+                                                           'OK'                  // buttonName
+                                                           );
+                              
+                              },
+                              
+                              dataType:"jsonp"});
+                       
+                       });
+					   
+					   
         
         $(document).on("touchstart", "#redraw", function(e){
                        
