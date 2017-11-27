@@ -2,8 +2,8 @@
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		id        = "com.tanadelletigri"
-		versionCode="5"
-		version   = "5">
+		versionCode="6"
+		version   = "6">
 		<name>TanadelleTigri</name>
 		<description>Poker Event Tana delle Tigri, Torneo di Poker Tana delle Tigri</description>
 		<author href="http://msop.it" email="info@msop.it">
@@ -67,7 +67,7 @@
 		<feature name="http://api.phonegap.com/1.0/notification"/>
 		
 		<plugin name="cordova-plugin-battery-status"      source="npm" />
-		<plugin name="cordova-plugin-camera"              source="npm" />
+		<plugin name="cordova-plugin-camera" version="2.4.1" source="npm" />
 		<plugin name="cordova-plugin-media-capture"       source="npm" />
 		<plugin name="cordova-plugin-console"             source="npm" />
 		<plugin name="cordova-plugin-contacts"            source="npm" />
@@ -75,9 +75,9 @@
 		<plugin name="cordova-plugin-device-motion"       source="npm" />
 		<plugin name="cordova-plugin-device-orientation"  source="npm" />
 		<plugin name="cordova-plugin-dialogs"             source="npm" />
-		<plugin name="cordova-plugin-file"                source="npm" />
-		<plugin name="cordova-plugin-file-transfer"       source="npm" />
-		<plugin name="cordova-plugin-geolocation"         source="npm" />
+		<plugin name="cordova-plugin-file" version="4.3.3" source="npm"/>
+		<plugin name="cordova-plugin-file-transfer" version="1.6.3" source="npm"/>
+		<plugin name="cordova-plugin-geolocation" version="2.4.3" source="npm" />
 		<plugin name="cordova-plugin-globalization"       source="npm" />
 		<plugin name="cordova-plugin-inappbrowser"        source="npm" />
 		<plugin name="cordova-plugin-media"               source="npm" />

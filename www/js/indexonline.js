@@ -252,3 +252,10 @@ $(document).on("touchstart", "#goinsta", function(e){
                
                var ref = window.open('http://www.cdsevents.it', '_system', 'location=no');
                });
+			   
+			   
+$(document).on("touchstart", "#gogn", function(e){
+                       
+            var ref = window.open('http://www.gioconews.it', '_system', 'location=no');
+                       
+});

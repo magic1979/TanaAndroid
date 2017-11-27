@@ -292,7 +292,7 @@ var app = {
                 
                 
                 function newLocation() {
-                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org","thecasinoperla.com/index.php?id=pokerroom_perla&L=158?utm_source=gameanswer&utm_medium=banner&utm_campaign=Poker%20room%20Perla&utm_content=ITA");
+                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org","thecasinoperla.com/index.php?id=pokerroom_perla&L=158?utm_source=gameanswer&utm_medium=banner&utm_campaign=Poker%20room%20Perla&utm_content=ITA","gioconews.it");
                     
                     //document.location.href = "http://www." + adURL[thisAd];
                     
@@ -304,7 +304,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("bannermondo.png","bannerpiw.jpg","bannerperla.jpg");
+                    var adImages = new Array("bannermondo.png","bannerpiw.jpg","bannerperla.jpg","gnpoker.png");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
@@ -344,7 +344,7 @@ var app = {
                 
                 
                 function newLocation() {
-                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org","thecasinoperla.com/index.php?id=pokerroom_perla&L=158?utm_source=gameanswer&utm_medium=banner&utm_campaign=Poker%20room%20Perla&utm_content=ITA");
+                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org","thecasinoperla.com/index.php?id=pokerroom_perla&L=158?utm_source=gameanswer&utm_medium=banner&utm_campaign=Poker%20room%20Perla&utm_content=ITA","gioconews.it");
                     
                     //document.location.href = "http://www." + adURL[thisAd];
                     
@@ -356,7 +356,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("bannermondo.png","bannerpiw.jpg","bannerperla.jpg");
+                    var adImages = new Array("bannermondo.png","bannerpiw.jpg","bannerperla.jpg","gnpoker.png");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
@@ -400,7 +400,7 @@ var app = {
                 
                 
                 function newLocation() {
-                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org","thecasinoperla.com/index.php?id=pokerroom_perla&L=158?utm_source=gameanswer&utm_medium=banner&utm_campaign=Poker%20room%20Perla&utm_content=ITA");
+                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org","thecasinoperla.com/index.php?id=pokerroom_perla&L=158?utm_source=gameanswer&utm_medium=banner&utm_campaign=Poker%20room%20Perla&utm_content=ITA","gioconews.it");
                     
                     //document.location.href = "http://www." + adURL[thisAd];
                     
@@ -412,7 +412,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("bannermondo.png","bannerpiw.jpg","bannerperla.jpg");
+                    var adImages = new Array("bannermondo.png","bannerpiw.jpg","bannerperla.jpg","gnpoker.png");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
@@ -452,7 +452,7 @@ var app = {
                 
                 
                 function newLocation() {
-                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org","thecasinoperla.com/index.php?id=pokerroom_perla&L=158?utm_source=gameanswer&utm_medium=banner&utm_campaign=Poker%20room%20Perla&utm_content=ITA");
+                    var adURL = new Array("pokernelmondo.com","pokeritaliaweb.org","thecasinoperla.com/index.php?id=pokerroom_perla&L=158?utm_source=gameanswer&utm_medium=banner&utm_campaign=Poker%20room%20Perla&utm_content=ITA","gioconews.it");
                     
                     //document.location.href = "http://www." + adURL[thisAd];
                     
@@ -464,7 +464,7 @@ var app = {
                 
                 
                 function rotate() {
-                    var adImages = new Array("bannermondo.png","bannerpiw.jpg","bannerperla.jpg");
+                    var adImages = new Array("bannermondo.png","bannerpiw.jpg","bannerperla.jpg","gnpoker.png");
                     
                     thisAd++;
                     if (thisAd == adImages.length) {
@@ -582,6 +582,12 @@ var app = {
 		$(document).on("touchstart", "#gofacebooklotto", function(e){
                        
             var ref = window.open('https://www.facebook.com/Lottomatica/', '_system', 'location=no');
+                       
+        });
+		
+		$(document).on("touchstart", "#gogn", function(e){
+                       
+            var ref = window.open('http://www.gioconews.it', '_system', 'location=no');
                        
         });
 		
