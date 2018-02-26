@@ -2,8 +2,8 @@
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		id        = "com.tanadelletigri"
-		versionCode="6"
-		version   = "6">
+		versionCode="7"
+		version   = "7">
 		<name>TanadelleTigri</name>
 		<description>Poker Event Tana delle Tigri, Torneo di Poker Tana delle Tigri</description>
 		<author href="http://msop.it" email="info@msop.it">
