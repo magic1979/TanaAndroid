@@ -37,6 +37,8 @@
 		<preference name="SplashScreen" value="screen" />
 		<preference name="SplashScreenDelay" value="5000" />
 		<preference name="SplashShowOnlyFirstTime" value="false" />
+		
+		<preference name="AndroidPersistentFileLocation" value="Compatibility" />
 		<!--<preference name="SplashScreen" value="splash" />
 		<preference name="SplashScreenDelay" value="10000" />
 		<preference name="SplashMaintainAspectRatio" value="false" />-->
@@ -75,7 +77,7 @@
 		<plugin name="cordova-plugin-device"              source="npm" />
 		<plugin name="cordova-plugin-device-motion"       source="npm" />
 		<plugin name="cordova-plugin-device-orientation"  source="npm" />
-		<plugin name="cordova-plugin-dialogs"             source="npm" />
+		<plugin name="cordova-plugin-dialogs"  version="2.0.2"  source="npm" />
 		<!--<plugin name="cordova-plugin-file" version="4.3.3" source="npm"/>-->
 		<plugin name="cordova-plugin-file" 				  source="npm"/>
 		<!--<plugin name="cordova-plugin-file-transfer" version="1.6.3" source="npm"/>-->
@@ -91,14 +93,14 @@
 		<plugin name="cordova-plugin-vibration"           source="npm" />
 		<plugin name="cordova-plugin-whitelist"           source="npm" />
 		
-		 <plugin name="cordova-plugin-googlemaps" spec="/Users/masashi/Documents/workspace2/cordova-plugin-googlemaps">
+		 <!--<plugin name="cordova-plugin-googlemaps" spec="/Users/masashi/Documents/workspace2/cordova-plugin-googlemaps">
 			<variable name="API_KEY_FOR_ANDROID" value="AIzaSyDoGU-q2R8gI3C2YdOheaCLTKl8rHshV9A" />
 			<variable name="API_KEY_FOR_IOS" value="AIzaSyDoGU-q2R8gI3C2YdOheaCLTKl8rHshV9A" />
 			<variable name="PLAY_SERVICES_VERSION" value="12.0.0" />
 			<variable name="ANDROID_SUPPORT_V4_VERSION" value="24.1.0" />
 			<variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="This app wants to get your location while this app runs only." />
 			<variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="This app wants to get your location always, even this app runs in background." />
-		</plugin>
+		</plugin>-->
 		
 		<!--<plugin name="cordova.plugins.diagnostic" source="npm" />
 		
