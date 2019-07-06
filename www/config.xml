@@ -87,6 +87,15 @@
 		<plugin name="cordova-plugin-vibration"           source="npm" />
 		<plugin name="cordova-plugin-whitelist"           source="npm" />
 		
+		 <plugin name="cordova-plugin-googlemaps" spec="/Users/masashi/Documents/workspace2/cordova-plugin-googlemaps">
+			<variable name="API_KEY_FOR_ANDROID" value="AIzaSyDoGU-q2R8gI3C2YdOheaCLTKl8rHshV9A" />
+			<variable name="API_KEY_FOR_IOS" value="AIzaSyDoGU-q2R8gI3C2YdOheaCLTKl8rHshV9A" />
+			<variable name="PLAY_SERVICES_VERSION" value="12.0.0" />
+			<variable name="ANDROID_SUPPORT_V4_VERSION" value="24.1.0" />
+			<variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="This app wants to get your location while this app runs only." />
+			<variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="This app wants to get your location always, even this app runs in background." />
+		</plugin>
+		
 		<!--<plugin name="cordova.plugins.diagnostic" source="npm" />
 		
 		<plugin name="cordova-plugin-cache" source="npm" />
