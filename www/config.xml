@@ -11,7 +11,7 @@
 		</author>
 		
 		<!--<preference name="pgb-builder-version" value="2" />-->
-		<preference name="phonegap-version" value="cli-8.1.1" />
+		<preference name="phonegap-version" value="cli-7.0.1" />
 		<preference name="orientation" value="portrait" />
 		<preference name="android-windowSoftInputMode" value="adjustResize" />
 		<preference name="fullscreen" value="false" />
@@ -77,7 +77,7 @@
 		<plugin name="cordova-plugin-device"              source="npm" />
 		<plugin name="cordova-plugin-device-motion"       source="npm" />
 		<plugin name="cordova-plugin-device-orientation"  source="npm" />
-		<plugin name="cordova-plugin-dialogs"  version="2.0.2"  source="npm" />
+		<plugin name="cordova-plugin-dialogs"  			  source="npm" />
 		<!--<plugin name="cordova-plugin-file" version="4.3.3" source="npm"/>-->
 		<plugin name="cordova-plugin-file" 				  source="npm"/>
 		<!--<plugin name="cordova-plugin-file-transfer" version="1.6.3" source="npm"/>-->
@@ -114,17 +114,17 @@
 		
 		
 		<plugin name="cordova-plugin-cache" source="npm" />
-		<!--<plugin name="cordova-plugin-pushplugin" source="npm" />-->
+		<plugin name="cordova-plugin-pushplugin" source="npm" />
 		<plugin name="cordova-plugin-datepicker" source="npm" />
 		<plugin name="cordova-plugin-insomnia" source="npm" />
 		
 		<plugin spec="https://github.com/katzer/cordova-plugin-email-composer.git#0.8.2" source="git" />
 		
 		<plugin name="ionic-plugin-keyboard"  source="npm" />
-		<plugin name="cordova-plugin-request-location-accuracy" source="npm" />
+		<!--<plugin name="cordova-plugin-request-location-accuracy" source="npm" />-->
 		<!--<plugin name="cordova-plugin-mauron85-background-geolocation" version="2.2.0"/>-->
 		
-		<plugin name="com.darktalker.cordova.screenshot" source="npm" />
+		<!--<plugin name="com.darktalker.cordova.screenshot" source="npm" />-->
 		<!--<gap:plugin name="cordova-plugin-admobpro" source="npm" />-->
 		<plugin name="cordova-plugin-nativeaudio" source="npm" />
 		<!--<plugin name="cordova-plugin-x-socialsharing" source="npm" />-->
