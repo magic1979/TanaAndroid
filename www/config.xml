@@ -38,7 +38,6 @@
 		<preference name="SplashScreenDelay" value="5000" />
 		<preference name="SplashShowOnlyFirstTime" value="false" />
 		
-		<preference name="AndroidPersistentFileLocation" value="Compatibility" />
 		<!--<preference name="SplashScreen" value="splash" />
 		<preference name="SplashScreenDelay" value="10000" />
 		<preference name="SplashMaintainAspectRatio" value="false" />-->
@@ -112,6 +111,7 @@
 
 		-->
 		
+		<!-- QUI
 		
 		<plugin name="cordova-plugin-cache" source="npm" />
 		<plugin name="cordova-plugin-pushplugin" source="npm" />
@@ -121,14 +121,20 @@
 		<plugin spec="https://github.com/katzer/cordova-plugin-email-composer.git#0.8.2" source="git" />
 		
 		<plugin name="ionic-plugin-keyboard"  source="npm" />
+		
+		<plugin name="com.telerik.plugins.nativepagetransitions" source="npm" />
+		
+		-->
+		
+		
 		<!--<plugin name="cordova-plugin-request-location-accuracy" source="npm" />-->
 		<!--<plugin name="cordova-plugin-mauron85-background-geolocation" version="2.2.0"/>-->
 		
 		<!--<plugin name="com.darktalker.cordova.screenshot" source="npm" />-->
 		<!--<gap:plugin name="cordova-plugin-admobpro" source="npm" />-->
-		<plugin name="cordova-plugin-nativeaudio" source="npm" />
+		<!--<plugin name="cordova-plugin-nativeaudio" source="npm" />-->
 		<!--<plugin name="cordova-plugin-x-socialsharing" source="npm" />-->
-		<plugin name="com.telerik.plugins.nativepagetransitions" source="npm" />
+		
 		
 		<icon src="36x36.png" platform="android" density="ldpi" />
 		<icon src="48x48.png" platform="android" density="mdpi" />
