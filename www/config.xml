@@ -116,13 +116,7 @@
 		
 		<plugin name="cordova-plugin-pushplugin" source="npm" />
 		<plugin name="cordova-plugin-datepicker" source="npm" />
-		<plugin name="cordova-plugin-insomnia" source="npm" />
 		
-		<plugin spec="https://github.com/katzer/cordova-plugin-email-composer.git#0.8.2" source="git" />
-		
-		<plugin name="ionic-plugin-keyboard"  source="npm" />
-		
-		<plugin name="com.telerik.plugins.nativepagetransitions" source="npm" />
 		
 		<!-- QUI
 		
