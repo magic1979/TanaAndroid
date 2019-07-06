@@ -112,7 +112,7 @@
 		<plugin name="com.darktalker.cordova.screenshot" source="npm" />
 		<!--<gap:plugin name="cordova-plugin-admobpro" source="npm" />-->
 		<plugin name="cordova-plugin-nativeaudio" source="npm" />
-		<plugin name="cordova-plugin-x-socialsharing" source="npm" />
+		<!--<plugin name="cordova-plugin-x-socialsharing" source="npm" />-->
 		<plugin name="com.telerik.plugins.nativepagetransitions" source="npm" />
 		
 		<icon src="36x36.png" platform="android" density="ldpi" />
